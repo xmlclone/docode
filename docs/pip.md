@@ -48,3 +48,7 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 ## 搭建自己源服务
+
+# 参考链接
+
+1. [官方PIP](https://pypi.org/project/setuptools/)
