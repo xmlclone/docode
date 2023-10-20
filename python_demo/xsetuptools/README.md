@@ -36,9 +36,22 @@ pip uninstall mypkg1
 pip install -e .
 ```
 
+# 发布包
+
+## 发布到pypi
+
+```shell
+pip install twine
+# 测试是否可以发布
+twine upload -r testpypi dist/*
+# 正式发布
+twine upload dist/*
+```
+
 # 参考链接
 
 1. [官方文档](https://setuptools.pypa.io/en/latest/)
 2. [MANIFEST.in配置参考](https://packaging.python.org/en/latest/guides/using-manifest-in/#manifest-in-commands)
 3. [Why you shouldn’t invoke setup.py directly](https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html)
 4. [pyproject.toml配置详解](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html)
+5. [twine](https://twine.readthedocs.io/en/stable/index.html)
