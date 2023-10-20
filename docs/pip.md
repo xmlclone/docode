@@ -49,6 +49,10 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 
 ## 搭建自己源服务
 
+# 发布包
+
+参考[python_demo/xsetuptools](https://github.com/xmlclone/docode/tree/main/python_demo/xsetuptools#%E5%8F%91%E5%B8%83%E5%8C%85)说明
+
 # 参考链接
 
-1. [官方PIP](https://pypi.org/project/setuptools/)
+1. [官方PIP](https://pypi.org/)
