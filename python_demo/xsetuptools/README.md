@@ -42,10 +42,14 @@ pip install -e .
 
 ```shell
 pip install twine
-# 测试是否可以发布
+# 测试发布(需要提前在pypi注册账号) https://test.pypi.org
 twine upload -r testpypi dist/*
-# 正式发布
+# 正式发布 https://pypi.org/
 twine upload dist/*
+
+# 默认发布到pypi,可以通过参数发布到指定的repo
+# 注意需要到pypi增加自己的api token,使用api token处理username和password
+twine upload --repository-url https://xxx -u username -p password dist/*
 ```
 
 # 参考链接
@@ -55,3 +59,4 @@ twine upload dist/*
 3. [Why you shouldn’t invoke setup.py directly](https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html)
 4. [pyproject.toml配置详解](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html)
 5. [twine](https://twine.readthedocs.io/en/stable/index.html)
+6. [packaging-projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
