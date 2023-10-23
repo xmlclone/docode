@@ -53,8 +53,9 @@ with sync_playwright() as playwright:
     page.locator('#id2').click()
     input()
 
-
     
+
+
 
 
     input('Press any key to exit.')
