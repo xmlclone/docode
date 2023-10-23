@@ -8,6 +8,7 @@ api接口文档: https://www.selenium.dev/selenium/docs/api/py/py-modindex.html
 最佳实践(包括PO页面对象模型等): https://www.selenium.dev/zh-cn/documentation/test_practices/design_strategies/
 chrome选项参数大全: https://peter.sh/experiments/chromium-command-line-switches/
 xpath教程: https://www.w3school.com.cn/xpath/index.asp
+元素定位技巧: https://zhuanlan.zhihu.com/p/512646721?utm_id=0
 
 基本原理:
 driver启动后(比如chromedriver)，会与浏览器建立websocket的链接，并且提供http服务
@@ -97,7 +98,8 @@ element = driver.find_element(By.TAG_NAME, 'div')
 element = driver.find_element(By.XPATH, '//button[@placeholder="Search or jump to..."]')
 # 根据css selector匹配
 element = driver.find_element(By.CSS_SELECTOR, 'button.header-search-button')
-# 根据class name匹配，如果元素有多个css，指定一个即可，无法指定多个
+# 根据class name匹配，如果元素有多个css，指定一个即可，无法指定多个，元素类似: <p class="header-search-button">
+# 注意这里不需要使用.或#，直接使用class的name即可
 element = driver.find_element(By.CLASS_NAME, 'header-search-button')
 
 # 元素访问
