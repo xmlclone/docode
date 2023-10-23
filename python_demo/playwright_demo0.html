@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>TestDemo</title>
+        <style>
+            .s1 {
+                color: red;
+            }
+
+            #id1 {
+                color: blue;
+            }
+        </style>
+        <script>
+            a = 0;
+            function button1() {
+                console.log("button1")
+                document.getElementById("id1").innerText = "changed." + a;
+                a++;
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <p id="id1">This is id1</p>
+            <p class="s1">This is css s1</p>
+            <input type="text" placeholder="This is placeholder">
+            <div>
+                <button onclick="button1()" id="id2" class="s1">click me</button>
+            </div>
+        </div>
+    </body>
+</html>
