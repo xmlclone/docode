@@ -46,3 +46,5 @@ pytest --collect-only
 # 参考链接
 
 1. [官方文档](https://docs.pytest.org/en/7.4.x/)
+2. [fixture](https://docs.pytest.org/en/7.4.x/reference/fixtures.html#fixtures)
+3. [marker](https://docs.pytest.org/en/7.4.x/how-to/mark.html#mark)

@@ -1,0 +1,9 @@
+[tool.pytest.ini_options]
+# 如果有无效的marker，抛出异常，如果不指定此参数，一般就是报warning
+# addopts = --strict-markers
+
+# 注册markers
+markers = [
+    "slow: slow test case(run time > 10s)",
+    "P0"
+]
