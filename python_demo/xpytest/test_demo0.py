@@ -1,4 +1,8 @@
 import pytest
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 
 def add(a, b):
@@ -6,6 +10,8 @@ def add(a, b):
 
 
 def test_1():
+    logger.debug('test_1')
+    logger.error("test_1")
     assert add(1, 2) == 3
 
 
@@ -80,6 +86,43 @@ def test_3():
     print('test 3, P0 level')
 
 
+# 自定义插件
 # pytest -k test_4 -s
 def test_4(myplugin1_fix1):
     print(myplugin1_fix1)
+
+
+# 参数化
+# @pytest.fixture(params=[1, 2], ids=['a', 'b'])
+@pytest.fixture(params=[1, 2])
+def fix5(request: pytest.FixtureRequest):
+    return request.param
+
+# 会生成两个用例，通过pytest --collect-only可以看出来
+# 如果@pytest.fixture指定了ids参数，则对应的用例名称会修改，通过pytest --collect-only可以看出来
+# pytest -k test_100 两个都执行
+# pytest -k test_100[1] 执行params为1
+# pytest -k test_100[2] 执行params为2
+def test_100(fix5):
+    assert fix5 * 0 == 0
+
+# 参数化方式二
+# test_101[1-2]
+# test_101[2-3]
+# test_101[3-4]
+@pytest.mark.parametrize("a, b", [(1, 2), (2, 3), (3, 4)])
+def test_101(a, b):
+    assert a + 1 == b
+
+
+@pytest.fixture
+def fix6():
+    print('fix6')
+
+# 注意下面使用fixuture的方式，不是直接传递到参数，故需要使用""，可以传递多个fix
+# 可以应用到类，类的所有test方法都会使用到这个fix
+# 可以应用到模块级别，模块级别需要使用 pytestmark = pytest.mark.usefixtures("fix6")的方式
+# 可以通过配置文件应用到本次执行的所有test，参考pyproject.toml配置
+@pytest.mark.usefixtures("fix6")
+def test_102():
+    print('test_102')
