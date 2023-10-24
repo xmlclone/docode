@@ -40,8 +40,27 @@ pytest --markers
 
 # 查看有多少用例
 pytest --collect-only
+
+# 查看plugin注册情况
+pytest --trace-config
 ```
 
+# 编写自己的插件(plugin)
+
+1. 创建插件包，比如本例的`pytest_muplugin1`
+2. 配置`pyproject.toml`，参考具体的配置文件
+3. 打包`python -m build`
+4. 安装`pip install -e .`
+5. 通过`pytest --trace-config`查看插件注册情况，使用`pytest --fixtures`查看fixture信息
+6. 代码文件`test_demo0.py`直接引用我们的插件fixture: `myplugin1_fix1`
+
+> `pytest --trace-config`信息如下:
+
+![](../../imgs/pytest1.png)
+
+> `pytest --fixtures`信息如下:
+
+![](../../imgs/pytest2.png)
 
 # 参考链接
 

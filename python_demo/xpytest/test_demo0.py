@@ -78,3 +78,8 @@ def test_2(fix1, fix2, conftest_fix1):
 @pytest.mark.P1("w")
 def test_3():
     print('test 3, P0 level')
+
+
+# pytest -k test_4 -s
+def test_4(myplugin1_fix1):
+    print(myplugin1_fix1)

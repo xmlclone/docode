@@ -1,3 +1,20 @@
+[build-system]
+requires = ['setuptools']
+build-backend = 'setuptools.build_meta'
+
+
+[project]
+name = "pytest_myplugin1"
+version = "1.0.0"
+classifiers = [
+    "Framework :: Pytest",
+]
+
+
+[project.entry-points.pytest11]
+pytest_myplugin1 = "pytest_myplugin1.pytest_myplugin1"
+
+
 [tool.pytest.ini_options]
 # 如果有无效的marker，抛出异常，如果不指定此参数，一般就是报warning
 # addopts = --strict-markers
