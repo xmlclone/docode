@@ -1,3 +1,5 @@
 dist
 *.egg-info
 *.pyc
+.pytest_cache
+__pycache__
