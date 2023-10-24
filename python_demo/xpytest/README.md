@@ -1,5 +1,7 @@
 # 演示环境
 
+> 项目实际应用情况可参考: [migrate-playwright-pytest](https://github.com/xmlclone/migrate-playwright-pytest)
+
 ```shell
 conda create -n vdocode python=3.12
 pytest==7.4.2
