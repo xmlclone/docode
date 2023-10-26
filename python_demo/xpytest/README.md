@@ -31,6 +31,9 @@ pytest -k "MyTest and not myfunction"
 # 指定指定某个具体的id
 pytest test.py::testclass::testmethod
 
+# 指定某个目录下的具体用例
+pytest testcases/demo.py::test_2
+
 # 根据marker执行(@pytest.mark.p0)
 pytest -m p0
 
