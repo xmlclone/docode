@@ -67,6 +67,20 @@ pytest --trace-config
 
 ![](../../imgs/pytest2.png)
 
+# 常用插件
+
+## pytest-html
+
+```shell
+# 安装
+pip install pytest-html
+
+# 使用
+pytest --html report.html #注意不要和-s一起使用，否则看不见详细信息
+# 上面方式会单独生成样式表(css)，不利于邮件发送，下面把所有元素集中到一个html文件内
+pytest --html report.html --self-contained-html
+```
+
 # 参考链接
 
 1. [官方文档](https://docs.pytest.org/en/7.4.x/)
