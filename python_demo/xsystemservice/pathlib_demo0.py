@@ -12,3 +12,12 @@ print(path.absolute())
 # 并且注意，上面的点表示的是当前执行的路径(注意，如果这个模块被外层引用，执行外层代码时，.表示的是外层的路径，就不是本文件的路径了)
 print(path.absolute().parent)
 print(path.absolute().parent / 'logs')
+
+
+# path.stem 是文件名，也就是pathlib
+# path.suffix 是文件后缀，也就是.log
+path = path.absolute().parent / 'logs' / 'pathlib.log'
+for i in dir(path):
+    if i.startswith("_"):
+        continue
+    print(f"{i}={getattr(path, i)}")
