@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.port": 5720
+    "liveServer.settings.port": 5720,
+    "java.configuration.updateBuildConfiguration": "automatic"
 }
