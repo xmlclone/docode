@@ -1,3 +1,16 @@
+# 命令行
+
+```shell
+# 运行java
+javac demo0.java
+java demo0
+```
+
+# 常用链接
+
+1. [commons.apache.org](https://commons.apache.org/)
+2. [commons-codec](https://commons.apache.org/proper/commons-codec/apidocs/overview-summary.html)
+
 # QA
 
 ## 找不到JRE目录
