@@ -245,6 +245,8 @@ jmeter配置如下:
 # 参考链接
 
 1. [log vars props...](https://jmeter.apache.org/usermanual/functions.html#__javaScript)
+2. [api](https://jmeter.apache.org/api/index.html)
+3. [](https://jmeter.apache.org/usermanual/functions.html)
 
 
 
