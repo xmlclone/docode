@@ -4,6 +4,8 @@
 
 [![PyPI](https://img.shields.io/pypi/v/linlei04-pkgdemo.svg)](https://pypi.org/project/linlei04-pkgdemo/)
 [![PyPI](https://img.shields.io/pypi/pyversions/linlei04-pkgdemo.svg)](https://pypi.org/project/linlei04-pkgdemo/)
+[![PyPI - Wheel](https://img.shields.io/pypi/wheel/linlei04-pkgdemo)](https://pypi.org/project/linlei04-pkgdemo/)
+[![PyPI - Implementation](https://img.shields.io/pypi/implementation/linlei04-pkgdemo)](https://pypi.org/project/linlei04-pkgdemo/)
 [![license](https://img.shields.io/github/license/xmlclone/docode.svg)](https://github.com/xmlclone/docode/blob/main/LICENSE)
 [![GitHub contributors](https://img.shields.io/github/contributors/xmlclone/docode.svg)](hhttps://github.com/xmlclone/docode/graphs/contributors)
 
