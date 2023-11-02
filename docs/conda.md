@@ -24,3 +24,31 @@ conda deactivate mybook
 # conda环境下的pip升级
 python -m pip install -U pip
 ```
+
+# 修改conda源
+
+在`$HOME/.condarc`文件更新(创建)如下内容:
+
+```yml
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+  - defaults
+ssl_verify: true
+show_channel_urls: true
+```
+
+或者用阿里云:
+
+```yml
+channels:
+  - https://mirrors.aliyun.com/anaconda/pkgs/main/
+  - https://mirrors.aliyun.com/anaconda/pkgs/free/
+  - https://mirrors.aliyun.com/anaconda/cloud/conda-forge/
+  - https://mirrors.aliyun.com/anaconda/cloud/pytorch/
+  - defaults
+ssl_verify: true
+show_channel_urls: true
+```
