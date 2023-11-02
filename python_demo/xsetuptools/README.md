@@ -63,6 +63,10 @@ write_to = "mypkg1/_version.py"
 local_scheme = "no-local-version"
 ```
 
+## 生成规则
+
+1. 根据git的最新tag生成版本号
+
 # 开发模式
 
 ```shell

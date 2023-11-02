@@ -51,6 +51,7 @@ git branch -d delete_branch
 # tag
 git tag -a v1.0 -m "commit msg"
 git tag #查看tag
+git tag --list #查看tag
 git tag -l v1.* #查看指定模式的tag
 git push origin v1.0 #推送指定tag
 git push --tags #推送所有tag
