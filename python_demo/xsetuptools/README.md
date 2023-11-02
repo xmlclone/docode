@@ -2,7 +2,7 @@
 
 更详细内容请参考: [pdemo](https://github.com/xmlclone/pdemo)
 
-虽然本文在setuptools下，但本文不仅限于`setuptools`，本文包好了一般python的打包、分发、构建、测试等，比如包含了`tox`、`mypy`等。
+虽然本文在setuptools下，但本文不仅限于`setuptools`，本文包含了一般python的打包、分发、构建、测试等，比如包含了`tox`、`mypy`等。
 
 # 安装
 
