@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools", "wheel", "setuptools_scm"]
 build-backend = "setuptools.build_meta"
 
 
@@ -19,7 +19,7 @@ dependencies = [
 # readme = "README.md"
 
 # 动态生成版本号，与version配置项冲突
-# 需要结合pip install poetry工具进行
+# 需要结合下面的[tool.setuptools_scm]配置项进行
 dynamic = ["version"]
 
 # 下面的大部分信息设置后才会在pypi进行友好的展示
@@ -64,3 +64,9 @@ exclude = ["mypkg1.testcases*"]  # empty by default
 [project.scripts]
 # 通过pip 或 pip -e安装后，就可以使用mypkg1命令了
 mypkg1 = "mypkg1.__main__:run"
+
+
+# pip install setuptools_scm
+[tool.setuptools_scm]
+write_to = "mypkg1/_version.py"
+local_scheme = "no-local-version"
