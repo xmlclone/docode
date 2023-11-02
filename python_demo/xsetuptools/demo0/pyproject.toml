@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "linlei04-mypkg1"
+name = "linlei04-pkgdemo"
 # version = "1.0.6"
 dependencies = [
     "requests",
@@ -17,17 +17,18 @@ dependencies = [
     "selenium==4.14.0",
 ]
 # readme = "README.md"
-authors = [
-    {name = "xmlclone", email = "xmlclone@gmail.com"},
-]
 
 # 动态生成版本号，与version配置项冲突
+# 需要结合pip install poetry工具进行
 dynamic = ["version"]
 
 # 下面的大部分信息设置后才会在pypi进行友好的展示
 description = "My package description"
 requires-python = ">=3.7"
 license = { text = "MIT"}
+authors = [
+    {name = "xmlclone", email = "xmlclone@gmail.com"},
+]
 [project.urls]
 Homepage = "https://github.com/xmlclone/docode"
 Documentation = "https://github.com/xmlclone/docode"
