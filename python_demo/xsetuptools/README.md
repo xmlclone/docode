@@ -22,6 +22,18 @@ pip install --upgrade build
 # 命令执行完成后，会在dist目录下生成whl和tar.gz文件
 # 这两个文件就可以通过 pip install 进行安装了，此时会安装到site-packages下，项目代码就可以像引用其它模块一样进行引用了
 python -m build
+
+# 查看帮助
+python -m build --help
+
+# 只打包sdist，也就是tar.gz文件(默认打包为tar.gz和whl两个文件)
+python -m build -s
+
+# 只打包whl
+python -m build -w
+
+# 加快打包速度(不安装虚拟环境)
+python -m build --no-isolation -s
 ```
 
 > 为啥不建议使用`setup.py`，请参考: [Why you shouldn’t invoke setup.py directly](https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html)
@@ -50,6 +62,15 @@ twine upload dist/*
 # 默认发布到pypi,可以通过参数发布到指定的repo
 # 注意需要到pypi增加自己的api token,使用api token处理username和password
 twine upload --repository-url https://xxx -u username -p password dist/*
+```
+
+> 注意: api token只会出现一次，后续无法获取，故需要及时保存，而且使用时的用户名一律为: `__token__`
+> 另外：可以配置`$HOME/.pypirc`为如下配置，即可以不在命令行使用用户名和密码
+
+```ini
+[pypi]
+  username = __token__
+  password = pypi-xxxx
 ```
 
 # 参考链接
