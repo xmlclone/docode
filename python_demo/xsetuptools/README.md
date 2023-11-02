@@ -1,3 +1,7 @@
+# 说明
+
+虽然本文在setuptools下，但本文不仅限于`setuptools`，本文包好了一般python的打包、分发、构建、测试等，比如包含了`tox`、`mypy`等。
+
 # 安装
 
 ```shell
@@ -37,6 +41,27 @@ python -m build --no-isolation -s
 ```
 
 > 为啥不建议使用`setup.py`，请参考: [Why you shouldn’t invoke setup.py directly](https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html)
+
+# 自动版本识别
+
+```shell
+# 依赖于setuptools_scm，当然还有很多其它的插件可以使用
+pip install setuptools_scm
+```
+
+> 项目目录下需要有版本工具的配置信息，比如git就需要有`.git`目录
+
+```toml
+[project]
+# version = "0.0.1"  # Remove any existing version parameter.
+dynamic = ["version"]
+
+[tool.setuptools_scm]
+version_file = "pkg/_version.py"
+# write_to已经在新版本弃用，使用上面的version_file代替
+write_to = "mypkg1/_version.py"
+local_scheme = "no-local-version"
+```
 
 # 开发模式
 
@@ -81,3 +106,5 @@ twine upload --repository-url https://xxx -u username -p password dist/*
 4. [pyproject.toml配置详解](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html)
 5. [twine](https://twine.readthedocs.io/en/stable/index.html)
 6. [packaging-projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+7. [setuptools-scm](https://pypi.org/project/setuptools-scm/)
+8. [setuptools-scm配置项](https://setuptools-scm.readthedocs.io/en/latest/config/)
