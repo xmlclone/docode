@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "linlei04-pkgdemo"
-# version = "1.0.6"
+version = "0.0.1"
 dependencies = [
     "requests",
     # requests <= 0.4
@@ -20,9 +20,18 @@ dependencies = [
 
 # 动态生成版本号，与version配置项冲突
 # 需要结合下面的[tool.setuptools_scm]配置项进行
-dynamic = ["version"]
+# dynamic = ["version"]
 
 # 下面的大部分信息设置后才会在pypi进行友好的展示
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
 description = "My package description"
 requires-python = ">=3.7"
 license = { text = "MIT"}
