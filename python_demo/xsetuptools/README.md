@@ -102,6 +102,36 @@ twine upload --repository-url https://xxx -u username -p password dist/*
   password = pypi-xxxx
 ```
 
+# tox
+
+```shell
+# 查看env列表
+tox list
+
+# 执行
+tox
+tox run
+
+# 指定执行环境
+tox run -e py310
+
+# 如果命令行有{}替换符号，可以通过--的方式替换{}
+tox run -e py310 -- -v
+```
+
+# make
+
+如果在windows下执行，建议使用WSL，安装并启动
+
+> windows下访问wsl目录，直接在资源管理器输入`\\wsl$`就可以查看；linux下访问windows，可以直接`cd /mnt`即可
+> wsl里面，进入到指定目录后，如果想通过vscode编辑代码，可以通过`code .`命令启动vscode
+
+`Makefile`里面定义了各项动作，比如要执行`tox`，只需要执行`make test`命令即可
+
+# shields.io生成badges
+
+参考demo0内部README.md文件和[shields.io官方链接](https://shields.io/badges/py-pi-python-version)
+
 # 参考链接
 
 1. [官方文档](https://setuptools.pypa.io/en/latest/)
@@ -112,3 +142,5 @@ twine upload --repository-url https://xxx -u username -p password dist/*
 6. [packaging-projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 7. [setuptools-scm](https://pypi.org/project/setuptools-scm/)
 8. [setuptools-scm配置项](https://setuptools-scm.readthedocs.io/en/latest/config/)
+9. [tox](https://tox.wiki/en/latest/index.html)
+10. [shields.io](https://shields.io/badges/py-pi-python-version)

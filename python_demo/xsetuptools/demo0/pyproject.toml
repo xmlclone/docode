@@ -58,7 +58,7 @@ include-package-data = true
 # 使用mypkg1是不对的，这样会去查找这个目录下的包，也就是只会打包testcases层的内容
 # where = ["mypkg1"]  # ["."] by default
 # include = ["mypkg1*"]  # ["*"] by default
-exclude = ["mypkg1.testcases*"]  # empty by default
+# exclude = ["mypkg1.tests*"]  # empty by default
 # namespaces = true  # true by default
 
 [project.scripts]
@@ -67,7 +67,7 @@ mypkg1 = "mypkg1.__main__:run"
 
 
 # pip install setuptools_scm
-# 需要结合版本控制工具来自动生成版本号，比如git，需要能访问.git目录
-[tool.setuptools_scm]
-write_to = "mypkg1/_version.py"
-local_scheme = "no-local-version"
+# 需要结合版本控制工具来自动生成版本号，比如git，需要能访问.git目录，更多规则参考README文档
+# [tool.setuptools_scm]
+# write_to = "mypkg1/_version.py"
+# local_scheme = "no-local-version"
