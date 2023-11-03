@@ -21,3 +21,8 @@ for i in dir(path):
     if i.startswith("_"):
         continue
     print(f"{i}={getattr(path, i)}")
+
+
+# 获取更多父目录
+print(list(path.parents))
+print(path.parents[2])
