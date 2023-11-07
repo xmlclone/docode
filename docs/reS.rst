@@ -71,7 +71,7 @@ __ https://github.com/
 |r|
 
 
-``note``、 ``warning``等依赖于主题的展示情况。
+``note``、 ``warning`` 等依赖于主题的展示情况。
 
 .. note:: 
   This is note.
