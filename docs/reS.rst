@@ -32,9 +32,13 @@
 #. 链接语法2_
 #. `链接语法3`__
 
-.. _链接语法2: https://www.baidu.com
 __ https://www.baidu.com
 
+.. _链接语法2: https://www.baidu.com
+
+`另外一个链接4`__
+
+__ https://github.com/
 
 .. This is comments.
 
