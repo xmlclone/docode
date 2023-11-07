@@ -12,6 +12,9 @@
 *text*  **text**  ``code``  
 
 * list1
+  * sub list1
+  * sub list2
+  
 * list2
 * list3
 
