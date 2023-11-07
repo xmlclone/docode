@@ -40,6 +40,8 @@ __ https://www.baidu.com
 
 __ https://github.com/
 
+直接连接到目录下其它文件 `reS1.rst`__
+
 .. This is comments.
 
 ..
@@ -51,6 +53,14 @@ __ https://github.com/
 
 
 这是另外一种代码形式::
+
+  def add(a, b):
+    return a + b
+
+
+另外一个代码形式:
+
+.. code:: python
 
   def add(a, b):
     return a + b

@@ -58,6 +58,14 @@ __ https://github.com/
     return a + b
 
 
+另外一个代码形式:
+
+.. code:: python
+
+  def add(a, b):
+    return a + b
+
+
 |r|
 
 
