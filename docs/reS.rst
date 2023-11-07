@@ -27,6 +27,10 @@
 #. list2
 #. list3
 
+`链接语法1 <https://www.baidu.com>`_
+`链接语法2`_
+
+.. _链接语法2: https:www.baidu.com
 
 参考链接
 --------
