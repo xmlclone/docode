@@ -2,6 +2,8 @@
 标题1
 =====
 
+.. contents:: 目录
+
 标题2
 =====
 
@@ -78,7 +80,16 @@ __ https://github.com/
   This is warning.
 
 
-.. image:: https://img.shields.io/github/license/xmlclone/pdemo.svg
+.. image:: https://img.shields.io/github/license/xmlclone/pdemo.svgz
+
+
+.. topic:: 这是topic
+
+  这是Topic内容。
+
+.. sidebar:: 这是sidebar
+
+  这是sidebar内容。
 
 
 参考链接
