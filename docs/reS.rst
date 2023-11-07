@@ -29,6 +29,9 @@
 
 
 #. `链接语法1 <https://www.baidu.com>`_
+#. 链接语法2_
+
+.. _链接语法2:https://www.baidu.com
 
 
 .. This is comments.
