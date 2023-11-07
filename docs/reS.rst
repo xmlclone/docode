@@ -40,7 +40,7 @@ __ https://www.baidu.com
 
 __ https://github.com/
 
-直接连接到目录下其它文件 `reS1.rst`__
+直接连接到目录下其它文件 `<reS1.rst>`__
 
 .. This is comments.
 
@@ -81,3 +81,5 @@ __ https://github.com/
 
 .. [#f1] This is foot notes 1.
 .. [#f2] This is foot notes 2.
+
+.. |r| unicode:: U+00AE
