@@ -71,7 +71,7 @@ __ https://github.com/
 |r|
 
 
-``note`` ``warning``等依赖于主题的展示情况。
+``note``、 ``warning``等依赖于主题的展示情况。
 
 .. note:: 
   This is note.
@@ -82,6 +82,9 @@ __ https://github.com/
 
 .. image:: https://img.shields.io/github/license/xmlclone/pdemo.svgz
 
+
+
+``topic``、 ``sidebar`` 也依赖于主题的展示情况。
 
 .. topic:: 这是topic
 
@@ -98,6 +101,7 @@ __ https://github.com/
 * `基础语法 <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_
 * `Sphinx-Directive <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html>`_
 * `Autodoc <https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_
+* 有关Sphinx的Demo，请参考: `Sphinx-Demo <>`_
 
 
 .. rubric:: Footnotes
