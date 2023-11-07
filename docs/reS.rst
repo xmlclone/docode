@@ -69,11 +69,16 @@ __ https://github.com/
 |r|
 
 
+``note`` ``warning``等依赖于主题的展示情况。
+
 .. note:: 
   This is note.
 
 .. warning:: 
   This is warning.
+
+
+.. image:: https://img.shields.io/github/license/xmlclone/pdemo.svg
 
 
 参考链接
