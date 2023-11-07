@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    This is document.
+Documentation    This is document. 演示基础语法
 ...              New line document.
 Resource         res.resource
 Library          String

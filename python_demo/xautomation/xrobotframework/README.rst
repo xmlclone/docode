@@ -17,4 +17,5 @@ tst
 --------------
 
 * `github <https://github.com/robotframework/robotframework>`_
+* `Build-in variables <http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#built-in-variables>`_
     
