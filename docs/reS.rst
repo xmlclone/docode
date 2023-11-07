@@ -69,6 +69,13 @@ __ https://github.com/
 |r|
 
 
+.. note:: 
+  This is note.
+
+.. warning:: 
+  This is warning.
+
+
 参考链接
 --------
 
