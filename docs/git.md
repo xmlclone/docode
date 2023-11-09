@@ -25,6 +25,7 @@ git remote -v
 git reset --hard HEAD^  直接把整个工作区恢复到初始状态，会删除文件
 git reset --mixed HEAD^ 退回到add之前
 git reset --soft HEAD^  退回到commit之前
+git reset --mixed 是默认行为
 
 # 查看分支
 git branch # 只查看本地的
