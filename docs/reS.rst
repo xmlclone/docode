@@ -101,7 +101,7 @@ __ https://github.com/
 * `基础语法 <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_
 * `Sphinx-Directive <https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html>`_
 * `Autodoc <https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`_
-* 有关Sphinx的Demo，请参考: `Sphinx-Demo <>`_
+* 更详细的语法和有关Sphinx的Demo，请参考: `Sphinx-Demo <https://github.com/xmlclone/docode/tree/main/python_demo/xsphinx>`_
 
 
 .. rubric:: Footnotes
