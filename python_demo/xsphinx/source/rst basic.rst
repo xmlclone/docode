@@ -70,6 +70,12 @@ __ https://github.com/
 
 |r|
 
+.. substitution 定义在conf.py内部
+
+|version|
+
+|release|
+
 
 ``note``、 ``warning`` 等依赖于主题的展示情况。
 
@@ -80,7 +86,7 @@ __ https://github.com/
   This is warning.
 
 
-.. image:: https://img.shields.io/github/license/xmlclone/pdemo.svgz
+.. image:: https://img.shields.io/github/license/xmlclone/pdesign.svg
 
 
 
