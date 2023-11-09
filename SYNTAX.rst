@@ -40,6 +40,10 @@ python
     # 字符串操作
     print(len(a))
 
+.. code:: groovy
+
+    // groovy也支持 和python一样的定义字符串的引号方式，也就是单引号，双引号，三引号都支持
+
 Array/List/Map...
 ====================
 
@@ -65,6 +69,13 @@ groovy
 .. code:: groovy
 
     // groovy 逻辑运算使用的是 && || !    & | ^ ~
+    if (a > 0) {
+        println("a > 0")
+    } else if (a < 0) {
+        println("a < 0")
+    } else {
+        println("a = 0")
+    }
 
 For
 =========
@@ -74,11 +85,25 @@ python
 
 .. code:: python
 
+    # python没有for(var; exp; inc)，可以简单想象为python没有++ --运算符
     for i in [1, 2, 3]:
         print(i)
 
     for idx, val in enumerate([1, 2, 3]):
         print(idx, val)
+
+groovy
+------------
+
+.. code:: groovy
+
+    for (int i = 0; i < 5; i++) {
+        println("loop for: " + i)
+    }
+
+    for (i in 5..10) {
+        println("loop for in: " + i)
+    }
 
 While
 ============
@@ -112,6 +137,13 @@ python
     def f6(a, *, c):
         ...
 
+groovy
+--------------
+
+.. code:: groovy
+
+    // 定义方式与python类似，也支持位置参数的方式
+
 Class
 ==========
 
@@ -129,4 +161,29 @@ python
     import os
     from os import path
     from os import path as os_path
+
+Commnets(注释)
+================
+
+python
+-----------
+
+.. code:: python
+
+    # 单行注释
+
+    """
+    多行注释
+    """
+
+groovy
+----------
+
+.. code:: groovy
+
+    // 单行注释
+
+    /*
+    多行注释
+    */
 
