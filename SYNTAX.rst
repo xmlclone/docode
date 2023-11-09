@@ -34,6 +34,9 @@ python
     a.format()
     print(f"{}")
 
+    # 字符串连接
+    # 1 + "2"   python不支持字符串和数值类型直接通过+连接，java、groovy等可以通过+号连接形成一个新的字符串，但是python不行，但是可以通过字符串格式化的方式达到此目的
+
     # 字符串操作
     print(len(a))
 
@@ -48,12 +51,20 @@ python
 
 .. code:: python
 
+    # python 逻辑运算使用的是 and or not
     if a:
         code
     elif b > 0:
         code
     else:
         code
+
+groovy
+---------
+
+.. code:: groovy
+
+    // groovy 逻辑运算使用的是 && || !    & | ^ ~
 
 For
 =========
