@@ -6,6 +6,11 @@
  多行注释
 */
 
+
+// 在同级目录下，导入java编写的代码，需要有class文件，不需要java和jar包
+import DemoJava;
+import DemoJava2;
+
 class HelloWord {
 
     static def f1(a, b=0) {
@@ -64,6 +69,10 @@ class HelloWord {
         println("class function f2: " + obj.f2(1, 2));
 
 
+        println("java jar static fun: " + DemoJava.add(1, 2));
+        println("java jar instance fun: " + new DemoJava().add(1, 2, 3));
+
+        println("java source instance fun: " + new DemoJava2().add(1, 2, 3));
         // println(instance f);
     }
 }
