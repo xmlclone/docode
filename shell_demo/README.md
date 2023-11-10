@@ -1,3 +1,23 @@
+# 常用命令
+
+```shell
+# 查看系统版本
+lsb_release -a
+cat /etc/os-release
+cat /etc/issue
+uname -r
+hostnamectl
+
+# 查看系统位数
+uname -m 
+cat /proc/cpuinfo
+
+# 查看系统资源
+df -h
+du -h
+top   (shift+e 切k m g)
+```
+
 # 基础命令
 
 ## 文本处理
