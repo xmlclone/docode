@@ -59,5 +59,11 @@ public class Demo0 {
         demo0.demo3(-1);
         demo0.demo4();
         demo0.demo5();
+
+        String s1 = "abc";
+        System.out.println(s1 instanceof String);
+        s1 = null;
+        System.out.println(s1 instanceof String);
+        System.out.println(s1 == null);
     }
 }
