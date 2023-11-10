@@ -107,3 +107,49 @@ loop = 0
 while loop < max_loop:
     logging.info(f"while loop: {loop}")
     loop += 1
+
+
+def f1(a, b=2):
+    logging.info(f"f1 param: {a=}, {b=}")
+
+def f2(a: int, *, b: int) -> None:
+    logging.info(f"f2 param: {a=}, {b=}")
+
+def f3(a, /, b):
+    logging.info(f"f3 param: {a=}, {b=}")
+
+def f4(a, *args, **kwargs):
+    logging.info(f"f4 param: {a=}, {args=}, {kwargs=}")
+
+f1(1)
+f1(1, 3)
+# f2的定义方式，*后面的参数，必须使用关键字的方式传递
+# f3的/方式已经过时，建议不在使用
+f2(1, b=2)
+f3(1, 2)
+f4(1, 2, 3, 4, x=5, y=6)
+
+
+class C1:
+    a: int = 1
+
+    def __init__(self, x, y, z) -> None:
+        self.b = 1
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def get_b(self):
+        logging.info(f"running c1 get_b: {self.a=}")
+    
+    @classmethod
+    def c1_cls_method(cls):
+        logging.info(f"running c1 class method: {cls=}, {cls.a=}")
+
+    @staticmethod
+    def c1_sta_method():
+        logging.info(f"running c1 static method: {C1.a=}")
+        
+# python支持多继承，
+class C2(C1, object):
+    ...
