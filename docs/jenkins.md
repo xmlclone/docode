@@ -2,6 +2,8 @@
 
 ## docker
 
+> https://registry.hub.docker.com/_/jenkins
+
 ```sh
 # 访问8080端口即可
 docker run --rm -itd -p 8080:8080 -p 50000:50000 jenkins
