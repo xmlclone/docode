@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231107 14:45:09.580" rpa="false" schemaversion="4">
+    <suite id="s1" name="Test 1"
+        source="D:\github\docode\python_demo\xautomation\xrobotframework\demo1\test_1.robot">
+        <kw name="My KW1" type="SETUP">
+            <arg>This is file suite setup.</arg>
+            <msg timestamp="20231107 14:45:09.612" level="TRACE">Arguments: [ ${message}='This is
+                file suite setup.' ]</msg>
+            <kw name="Log" library="BuiltIn">
+                <arg>${message}</arg>
+                <doc>Logs the given message with the given level.</doc>
+                <msg timestamp="20231107 14:45:09.613" level="TRACE">Arguments: [ 'This is file
+                    suite setup.' ]</msg>
+                <msg timestamp="20231107 14:45:09.613" level="INFO">This is file suite setup.</msg>
+                <msg timestamp="20231107 14:45:09.613" level="TRACE">Return: None</msg>
+                <status status="PASS" starttime="20231107 14:45:09.613"
+                    endtime="20231107 14:45:09.613" />
+            </kw>
+            <msg timestamp="20231107 14:45:09.613" level="TRACE">Return: 'my kw1 return.'</msg>
+            <status status="PASS" starttime="20231107 14:45:09.612" endtime="20231107 14:45:09.613" />
+        </kw>
+        <test id="s1-t1" name="Test1: test case1" line="25">
+            <kw name="My KW1" type="SETUP">
+                <arg>This is testcase1 setup.</arg>
+                <msg timestamp="20231107 14:45:09.614" level="TRACE">Arguments: [ ${message}='This
+                    is testcase1 setup.' ]</msg>
+                <kw name="Log" library="BuiltIn">
+                    <arg>${message}</arg>
+                    <doc>Logs the given message with the given level.</doc>
+                    <msg timestamp="20231107 14:45:09.614" level="TRACE">Arguments: [ 'This is
+                        testcase1 setup.' ]</msg>
+                    <msg timestamp="20231107 14:45:09.614" level="INFO">This is testcase1 setup.</msg>
+                    <msg timestamp="20231107 14:45:09.614" level="TRACE">Return: None</msg>
+                    <status status="PASS" starttime="20231107 14:45:09.614"
+                        endtime="20231107 14:45:09.614" />
+                </kw>
+                <msg timestamp="20231107 14:45:09.614" level="TRACE">Return: 'my kw1 return.'</msg>
+                <status status="PASS" starttime="20231107 14:45:09.614"
+                    endtime="20231107 14:45:09.614" />
+            </kw>
+            <kw name="My KW1">
+                <var>${ret}</var>
+                <arg>This is my kw1.</arg>
+                <msg timestamp="20231107 14:45:09.615" level="TRACE">Arguments: [ ${message}='This
+                    is my kw1.' ]</msg>
+                <kw name="Log" library="BuiltIn">
+                    <arg>${message}</arg>
+                    <doc>Logs the given message with the given level.</doc>
+                    <msg timestamp="20231107 14:45:09.615" level="TRACE">Arguments: [ 'This is my
+                        kw1.' ]</msg>
+                    <msg timestamp="20231107 14:45:09.615" level="INFO">This is my kw1.</msg>
+                    <msg timestamp="20231107 14:45:09.615" level="TRACE">Return: None</msg>
+                    <status status="PASS" starttime="20231107 14:45:09.615"
+                        endtime="20231107 14:45:09.615" />
+                </kw>
+                <msg timestamp="20231107 14:45:09.615" level="TRACE">Return: 'my kw1 return.'</msg>
+                <msg timestamp="20231107 14:45:09.615" level="INFO">${ret} = my kw1 return.</msg>
+                <status status="PASS" starttime="20231107 14:45:09.614"
+                    endtime="20231107 14:45:09.615" />
+            </kw>
+            <kw name="Log" library="BuiltIn">
+                <arg>${ret}</arg>
+                <doc>Logs the given message with the given level.</doc>
+                <msg timestamp="20231107 14:45:09.615" level="TRACE">Arguments: [ 'my kw1 return.' ]</msg>
+                <msg timestamp="20231107 14:45:09.615" level="INFO">my kw1 return.</msg>
+                <msg timestamp="20231107 14:45:09.615" level="TRACE">Return: None</msg>
+                <status status="PASS" starttime="20231107 14:45:09.615"
+                    endtime="20231107 14:45:09.615" />
+            </kw>
+            <kw name="My KW1" type="TEARDOWN">
+                <arg>This is testcase1 teardown.</arg>
+                <msg timestamp="20231107 14:45:09.616" level="TRACE">Arguments: [ ${message}='This
+                    is testcase1 teardown.' ]</msg>
+                <kw name="Log" library="BuiltIn">
+                    <arg>${message}</arg>
+                    <doc>Logs the given message with the given level.</doc>
+                    <msg timestamp="20231107 14:45:09.616" level="TRACE">Arguments: [ 'This is
+                        testcase1 teardown.' ]</msg>
+                    <msg timestamp="20231107 14:45:09.616" level="INFO">This is testcase1 teardown.</msg>
+                    <msg timestamp="20231107 14:45:09.616" level="TRACE">Return: None</msg>
+                    <status status="PASS" starttime="20231107 14:45:09.616"
+                        endtime="20231107 14:45:09.616" />
+                </kw>
+                <msg timestamp="20231107 14:45:09.616" level="TRACE">Return: 'my kw1 return.'</msg>
+                <status status="PASS" starttime="20231107 14:45:09.616"
+                    endtime="20231107 14:45:09.616" />
+            </kw>
+            <doc>This is test case document.</doc>
+            <tag>case1</tag>
+            <tag>forcetags</tag>
+            <tag>P0</tag>
+            <status status="PASS" starttime="20231107 14:45:09.613" endtime="20231107 14:45:09.616" />
+        </test>
+        <test id="s1-t2" name="Test2: test case2" line="35">
+            <kw name="My KW1" type="SETUP">
+                <arg>This is file test setup.</arg>
+                <msg timestamp="20231107 14:45:09.617" level="TRACE">Arguments: [ ${message}='This
+                    is file test setup.' ]</msg>
+                <kw name="Log" library="BuiltIn">
+                    <arg>${message}</arg>
+                    <doc>Logs the given message with the given level.</doc>
+                    <msg timestamp="20231107 14:45:09.617" level="TRACE">Arguments: [ 'This is file
+                        test setup.' ]</msg>
+                    <msg timestamp="20231107 14:45:09.617" level="INFO">This is file test setup.</msg>
+                    <msg timestamp="20231107 14:45:09.617" level="TRACE">Return: None</msg>
+                    <status status="PASS" starttime="20231107 14:45:09.617"
+                        endtime="20231107 14:45:09.617" />
+                </kw>
+                <msg timestamp="20231107 14:45:09.618" level="TRACE">Return: 'my kw1 return.'</msg>
+                <status status="PASS" starttime="20231107 14:45:09.617"
+                    endtime="20231107 14:45:09.618" />
+            </kw>
+            <kw name="Should Be Equal" library="BuiltIn">
+                <arg>1</arg>
+                <arg>1</arg>
+                <doc>Fails if the given objects are unequal.</doc>
+                <msg timestamp="20231107 14:45:09.618" level="TRACE">Arguments: [ '1' | '1' ]</msg>
+                <msg timestamp="20231107 14:45:09.618" level="DEBUG">Argument types are:
+                    &lt;class 'str'&gt;
+                    &lt;class 'str'&gt;</msg>
+                <msg timestamp="20231107 14:45:09.618" level="TRACE">Return: None</msg>
+                <status status="PASS" starttime="20231107 14:45:09.618"
+                    endtime="20231107 14:45:09.618" />
+            </kw>
+            <kw name="RES KW1" library="res">
+                <msg timestamp="20231107 14:45:09.618" level="TRACE">Arguments: [ ]</msg>
+                <kw name="Log" library="BuiltIn">
+                    <arg>This is res kw1.</arg>
+                    <doc>Logs the given message with the given level.</doc>
+                    <msg timestamp="20231107 14:45:09.618" level="TRACE">Arguments: [ 'This is res
+                        kw1.' ]</msg>
+                    <msg timestamp="20231107 14:45:09.618" level="INFO">This is res kw1.</msg>
+                    <msg timestamp="20231107 14:45:09.618" level="TRACE">Return: None</msg>
+                    <status status="PASS" starttime="20231107 14:45:09.618"
+                        endtime="20231107 14:45:09.618" />
+                </kw>
+                <msg timestamp="20231107 14:45:09.618" level="TRACE">Return: None</msg>
+                <status status="PASS" starttime="20231107 14:45:09.618"
+                    endtime="20231107 14:45:09.618" />
+            </kw>
+            <kw name="Should Be Lower Case" library="String">
+                <arg>abc</arg>
+                <doc>Fails if the given ``string`` is not in lower case.</doc>
+                <msg timestamp="20231107 14:45:09.619" level="TRACE">Arguments: [ 'abc' ]</msg>
+                <msg timestamp="20231107 14:45:09.619" level="TRACE">Return: None</msg>
+                <status status="PASS" starttime="20231107 14:45:09.619"
+                    endtime="20231107 14:45:09.619" />
+            </kw>
+            <kw name="Should Be Lower Case" library="NEW_String">
+                <arg>def</arg>
+                <doc>Fails if the given ``string`` is not in lower case.</doc>
+                <msg timestamp="20231107 14:45:09.619" level="TRACE">Arguments: [ 'def' ]</msg>
+                <msg timestamp="20231107 14:45:09.619" level="TRACE">Return: None</msg>
+                <status status="PASS" starttime="20231107 14:45:09.619"
+                    endtime="20231107 14:45:09.619" />
+            </kw>
+            <kw name="My KW1" type="TEARDOWN">
+                <arg>This is file test teardown.</arg>
+                <msg timestamp="20231107 14:45:09.619" level="TRACE">Arguments: [ ${message}='This
+                    is file test teardown.' ]</msg>
+                <kw name="Log" library="BuiltIn">
+                    <arg>${message}</arg>
+                    <doc>Logs the given message with the given level.</doc>
+                    <msg timestamp="20231107 14:45:09.620" level="TRACE">Arguments: [ 'This is file
+                        test teardown.' ]</msg>
+                    <msg timestamp="20231107 14:45:09.620" level="INFO">This is file test teardown.</msg>
+                    <msg timestamp="20231107 14:45:09.620" level="TRACE">Return: None</msg>
+                    <status status="PASS" starttime="20231107 14:45:09.619"
+                        endtime="20231107 14:45:09.620" />
+                </kw>
+                <msg timestamp="20231107 14:45:09.620" level="TRACE">Return: 'my kw1 return.'</msg>
+                <status status="PASS" starttime="20231107 14:45:09.619"
+                    endtime="20231107 14:45:09.620" />
+            </kw>
+            <tag>defaulttags</tag>
+            <tag>forcetags</tag>
+            <status status="PASS" starttime="20231107 14:45:09.617" endtime="20231107 14:45:09.620" />
+        </test>
+        <test id="s1-t3" name="Test3: test case3" line="43">
+            <kw name="My KW1" type="SETUP">
+                <arg>This is file test setup.</arg>
+                <msg timestamp="20231107 14:45:09.620" level="TRACE">Arguments: [ ${message}='This
+                    is file test setup.' ]</msg>
+                <kw name="Log" library="BuiltIn">
+                    <arg>${message}</arg>
+                    <doc>Logs the given message with the given level.</doc>
+                    <msg timestamp="20231107 14:45:09.621" level="TRACE">Arguments: [ 'This is file
+                        test setup.' ]</msg>
+                    <msg timestamp="20231107 14:45:09.621" level="INFO">This is file test setup.</msg>
+                    <msg timestamp="20231107 14:45:09.621" level="TRACE">Return: None</msg>
+                    <status status="PASS" starttime="20231107 14:45:09.621"
+                        endtime="20231107 14:45:09.621" />
+                </kw>
+                <msg timestamp="20231107 14:45:09.621" level="TRACE">Return: 'my kw1 return.'</msg>
+                <status status="PASS" starttime="20231107 14:45:09.620"
+                    endtime="20231107 14:45:09.621" />
+            </kw>
+            <for flavor="IN">
+                <var>${i}</var>
+                <value>cat</value>
+                <value>dog</value>
+                <value>pig</value>
+                <iter>
+                    <var name="${i}">cat</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for in: ${i}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.621" level="TRACE">Arguments: [ 'test for
+                            in: cat' ]</msg>
+                        <msg timestamp="20231107 14:45:09.621" level="INFO">test for in: cat</msg>
+                        <msg timestamp="20231107 14:45:09.621" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.621"
+                            endtime="20231107 14:45:09.621" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.621"
+                        endtime="20231107 14:45:09.621" />
+                </iter>
+                <iter>
+                    <var name="${i}">dog</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for in: ${i}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.621" level="TRACE">Arguments: [ 'test for
+                            in: dog' ]</msg>
+                        <msg timestamp="20231107 14:45:09.621" level="INFO">test for in: dog</msg>
+                        <msg timestamp="20231107 14:45:09.621" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.621"
+                            endtime="20231107 14:45:09.622" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.621"
+                        endtime="20231107 14:45:09.622" />
+                </iter>
+                <iter>
+                    <var name="${i}">pig</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for in: ${i}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.622" level="TRACE">Arguments: [ 'test for
+                            in: pig' ]</msg>
+                        <msg timestamp="20231107 14:45:09.622" level="INFO">test for in: pig</msg>
+                        <msg timestamp="20231107 14:45:09.622" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.622"
+                            endtime="20231107 14:45:09.622" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.622"
+                        endtime="20231107 14:45:09.622" />
+                </iter>
+                <status status="PASS" starttime="20231107 14:45:09.621"
+                    endtime="20231107 14:45:09.622" />
+            </for>
+            <for flavor="IN">
+                <var>${v}</var>
+                <value>@{listvar}</value>
+                <iter>
+                    <var name="${v}">1</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for in listvar: ${v}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.622" level="TRACE">Arguments: [ 'test for
+                            in listvar: 1' ]</msg>
+                        <msg timestamp="20231107 14:45:09.622" level="INFO">test for in listvar: 1</msg>
+                        <msg timestamp="20231107 14:45:09.622" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.622"
+                            endtime="20231107 14:45:09.622" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.622"
+                        endtime="20231107 14:45:09.622" />
+                </iter>
+                <iter>
+                    <var name="${v}">2</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for in listvar: ${v}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.622" level="TRACE">Arguments: [ 'test for
+                            in listvar: 2' ]</msg>
+                        <msg timestamp="20231107 14:45:09.623" level="INFO">test for in listvar: 2</msg>
+                        <msg timestamp="20231107 14:45:09.623" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.622"
+                            endtime="20231107 14:45:09.623" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.622"
+                        endtime="20231107 14:45:09.623" />
+                </iter>
+                <iter>
+                    <var name="${v}">3</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for in listvar: ${v}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.623" level="TRACE">Arguments: [ 'test for
+                            in listvar: 3' ]</msg>
+                        <msg timestamp="20231107 14:45:09.623" level="INFO">test for in listvar: 3</msg>
+                        <msg timestamp="20231107 14:45:09.623" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.623"
+                            endtime="20231107 14:45:09.623" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.623"
+                        endtime="20231107 14:45:09.623" />
+                </iter>
+                <iter>
+                    <var name="${v}">4</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for in listvar: ${v}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.623" level="TRACE">Arguments: [ 'test for
+                            in listvar: 4' ]</msg>
+                        <msg timestamp="20231107 14:45:09.623" level="INFO">test for in listvar: 4</msg>
+                        <msg timestamp="20231107 14:45:09.624" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.623"
+                            endtime="20231107 14:45:09.624" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.623"
+                        endtime="20231107 14:45:09.624" />
+                </iter>
+                <status status="PASS" starttime="20231107 14:45:09.622"
+                    endtime="20231107 14:45:09.624" />
+            </for>
+            <for flavor="IN RANGE">
+                <var>${i}</var>
+                <value>5</value>
+                <iter>
+                    <var name="${i}">0</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for range: ${i}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.624" level="TRACE">Arguments: [ 'test for
+                            range: 0' ]</msg>
+                        <msg timestamp="20231107 14:45:09.624" level="INFO">test for range: 0</msg>
+                        <msg timestamp="20231107 14:45:09.624" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.624"
+                            endtime="20231107 14:45:09.624" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.624"
+                        endtime="20231107 14:45:09.624" />
+                </iter>
+                <iter>
+                    <var name="${i}">1</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for range: ${i}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.624" level="TRACE">Arguments: [ 'test for
+                            range: 1' ]</msg>
+                        <msg timestamp="20231107 14:45:09.624" level="INFO">test for range: 1</msg>
+                        <msg timestamp="20231107 14:45:09.624" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.624"
+                            endtime="20231107 14:45:09.624" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.624"
+                        endtime="20231107 14:45:09.624" />
+                </iter>
+                <iter>
+                    <var name="${i}">2</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for range: ${i}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.625" level="TRACE">Arguments: [ 'test for
+                            range: 2' ]</msg>
+                        <msg timestamp="20231107 14:45:09.625" level="INFO">test for range: 2</msg>
+                        <msg timestamp="20231107 14:45:09.625" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.625"
+                            endtime="20231107 14:45:09.625" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.625"
+                        endtime="20231107 14:45:09.625" />
+                </iter>
+                <iter>
+                    <var name="${i}">3</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for range: ${i}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.625" level="TRACE">Arguments: [ 'test for
+                            range: 3' ]</msg>
+                        <msg timestamp="20231107 14:45:09.625" level="INFO">test for range: 3</msg>
+                        <msg timestamp="20231107 14:45:09.625" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.625"
+                            endtime="20231107 14:45:09.625" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.625"
+                        endtime="20231107 14:45:09.625" />
+                </iter>
+                <iter>
+                    <var name="${i}">4</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for range: ${i}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.625" level="TRACE">Arguments: [ 'test for
+                            range: 4' ]</msg>
+                        <msg timestamp="20231107 14:45:09.626" level="INFO">test for range: 4</msg>
+                        <msg timestamp="20231107 14:45:09.626" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.625"
+                            endtime="20231107 14:45:09.626" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.625"
+                        endtime="20231107 14:45:09.626" />
+                </iter>
+                <status status="PASS" starttime="20231107 14:45:09.624"
+                    endtime="20231107 14:45:09.626" />
+            </for>
+            <for flavor="IN ENUMERATE">
+                <var>${idx}</var>
+                <var>${val}</var>
+                <value>@{listvar}</value>
+                <iter>
+                    <var name="${idx}">0</var>
+                    <var name="${val}">1</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for enumerate: ${idx}, ${val}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.626" level="TRACE">Arguments: [ 'test for
+                            enumerate: 0, 1' ]</msg>
+                        <msg timestamp="20231107 14:45:09.626" level="INFO">test for enumerate: 0, 1</msg>
+                        <msg timestamp="20231107 14:45:09.626" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.626"
+                            endtime="20231107 14:45:09.626" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.626"
+                        endtime="20231107 14:45:09.626" />
+                </iter>
+                <iter>
+                    <var name="${idx}">1</var>
+                    <var name="${val}">2</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for enumerate: ${idx}, ${val}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.626" level="TRACE">Arguments: [ 'test for
+                            enumerate: 1, 2' ]</msg>
+                        <msg timestamp="20231107 14:45:09.626" level="INFO">test for enumerate: 1, 2</msg>
+                        <msg timestamp="20231107 14:45:09.626" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.626"
+                            endtime="20231107 14:45:09.626" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.626"
+                        endtime="20231107 14:45:09.626" />
+                </iter>
+                <iter>
+                    <var name="${idx}">2</var>
+                    <var name="${val}">3</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for enumerate: ${idx}, ${val}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.627" level="TRACE">Arguments: [ 'test for
+                            enumerate: 2, 3' ]</msg>
+                        <msg timestamp="20231107 14:45:09.627" level="INFO">test for enumerate: 2, 3</msg>
+                        <msg timestamp="20231107 14:45:09.627" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.627"
+                            endtime="20231107 14:45:09.627" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.626"
+                        endtime="20231107 14:45:09.627" />
+                </iter>
+                <iter>
+                    <var name="${idx}">3</var>
+                    <var name="${val}">4</var>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>test for enumerate: ${idx}, ${val}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.627" level="TRACE">Arguments: [ 'test for
+                            enumerate: 3, 4' ]</msg>
+                        <msg timestamp="20231107 14:45:09.627" level="INFO">test for enumerate: 3, 4</msg>
+                        <msg timestamp="20231107 14:45:09.627" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.627"
+                            endtime="20231107 14:45:09.627" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.627"
+                        endtime="20231107 14:45:09.627" />
+                </iter>
+                <status status="PASS" starttime="20231107 14:45:09.626"
+                    endtime="20231107 14:45:09.627" />
+            </for>
+            <kw name="Set Variable" library="BuiltIn">
+                <var>${var1}</var>
+                <arg>5</arg>
+                <doc>Returns the given values which can then be assigned to a variables.</doc>
+                <msg timestamp="20231107 14:45:09.627" level="TRACE">Arguments: [ '5' ]</msg>
+                <msg timestamp="20231107 14:45:09.627" level="TRACE">Return: '5'</msg>
+                <msg timestamp="20231107 14:45:09.627" level="INFO">${var1} = 5</msg>
+                <status status="PASS" starttime="20231107 14:45:09.627"
+                    endtime="20231107 14:45:09.627" />
+            </kw>
+            <while condition="${var1} &gt; 0">
+                <iter>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>this is while: ${var1}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.628" level="TRACE">Arguments: [ 'this is
+                            while: 5' ]</msg>
+                        <msg timestamp="20231107 14:45:09.628" level="INFO">this is while: 5</msg>
+                        <msg timestamp="20231107 14:45:09.628" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.628"
+                            endtime="20231107 14:45:09.628" />
+                    </kw>
+                    <kw name="Evaluate" library="BuiltIn">
+                        <var>${var1}</var>
+                        <arg>${var1} - 1</arg>
+                        <doc>Evaluates the given expression in Python and returns the result.</doc>
+                        <msg timestamp="20231107 14:45:09.628" level="TRACE">Arguments: [ '5 - 1' ]</msg>
+                        <msg timestamp="20231107 14:45:09.628" level="TRACE">Return: 4</msg>
+                        <msg timestamp="20231107 14:45:09.628" level="INFO">${var1} = 4</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.628"
+                            endtime="20231107 14:45:09.628" />
+                    </kw>
+                    <kw name="Set Variable" library="BuiltIn">
+                        <var>${var1}</var>
+                        <arg>${var1} - 1</arg>
+                        <doc>Returns the given values which can then be assigned to a variables.</doc>
+                        <msg timestamp="20231107 14:45:09.628" level="TRACE">Arguments: [ '4 - 1' ]</msg>
+                        <msg timestamp="20231107 14:45:09.628" level="TRACE">Return: '4 - 1'</msg>
+                        <msg timestamp="20231107 14:45:09.628" level="INFO">${var1} = 4 - 1</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.628"
+                            endtime="20231107 14:45:09.628" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.627"
+                        endtime="20231107 14:45:09.628" />
+                </iter>
+                <iter>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>this is while: ${var1}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.629" level="TRACE">Arguments: [ 'this is
+                            while: 4 - 1' ]</msg>
+                        <msg timestamp="20231107 14:45:09.629" level="INFO">this is while: 4 - 1</msg>
+                        <msg timestamp="20231107 14:45:09.629" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.628"
+                            endtime="20231107 14:45:09.629" />
+                    </kw>
+                    <kw name="Evaluate" library="BuiltIn">
+                        <var>${var1}</var>
+                        <arg>${var1} - 1</arg>
+                        <doc>Evaluates the given expression in Python and returns the result.</doc>
+                        <msg timestamp="20231107 14:45:09.629" level="TRACE">Arguments: [ '4 - 1 -
+                            1' ]</msg>
+                        <msg timestamp="20231107 14:45:09.629" level="TRACE">Return: 2</msg>
+                        <msg timestamp="20231107 14:45:09.629" level="INFO">${var1} = 2</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.629"
+                            endtime="20231107 14:45:09.629" />
+                    </kw>
+                    <kw name="Set Variable" library="BuiltIn">
+                        <var>${var1}</var>
+                        <arg>${var1} - 1</arg>
+                        <doc>Returns the given values which can then be assigned to a variables.</doc>
+                        <msg timestamp="20231107 14:45:09.629" level="TRACE">Arguments: [ '2 - 1' ]</msg>
+                        <msg timestamp="20231107 14:45:09.629" level="TRACE">Return: '2 - 1'</msg>
+                        <msg timestamp="20231107 14:45:09.629" level="INFO">${var1} = 2 - 1</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.629"
+                            endtime="20231107 14:45:09.629" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.628"
+                        endtime="20231107 14:45:09.629" />
+                </iter>
+                <iter>
+                    <kw name="Log" library="BuiltIn">
+                        <arg>this is while: ${var1}</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.629" level="TRACE">Arguments: [ 'this is
+                            while: 2 - 1' ]</msg>
+                        <msg timestamp="20231107 14:45:09.630" level="INFO">this is while: 2 - 1</msg>
+                        <msg timestamp="20231107 14:45:09.630" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.629"
+                            endtime="20231107 14:45:09.630" />
+                    </kw>
+                    <kw name="Evaluate" library="BuiltIn">
+                        <var>${var1}</var>
+                        <arg>${var1} - 1</arg>
+                        <doc>Evaluates the given expression in Python and returns the result.</doc>
+                        <msg timestamp="20231107 14:45:09.630" level="TRACE">Arguments: [ '2 - 1 -
+                            1' ]</msg>
+                        <msg timestamp="20231107 14:45:09.630" level="TRACE">Return: 0</msg>
+                        <msg timestamp="20231107 14:45:09.630" level="INFO">${var1} = 0</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.630"
+                            endtime="20231107 14:45:09.630" />
+                    </kw>
+                    <kw name="Set Variable" library="BuiltIn">
+                        <var>${var1}</var>
+                        <arg>${var1} - 1</arg>
+                        <doc>Returns the given values which can then be assigned to a variables.</doc>
+                        <msg timestamp="20231107 14:45:09.630" level="TRACE">Arguments: [ '0 - 1' ]</msg>
+                        <msg timestamp="20231107 14:45:09.630" level="TRACE">Return: '0 - 1'</msg>
+                        <msg timestamp="20231107 14:45:09.630" level="INFO">${var1} = 0 - 1</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.630"
+                            endtime="20231107 14:45:09.630" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.629"
+                        endtime="20231107 14:45:09.630" />
+                </iter>
+                <status status="PASS" starttime="20231107 14:45:09.627"
+                    endtime="20231107 14:45:09.630" />
+            </while>
+            <if>
+                <branch type="IF" condition="${var1} &gt; 0">
+                    <kw name="Log" library="BuiltIn">
+                        <arg>var1&gt;0</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <status status="NOT RUN" starttime="20231107 14:45:09.631"
+                            endtime="20231107 14:45:09.631" />
+                    </kw>
+                    <status status="NOT RUN" starttime="20231107 14:45:09.631"
+                        endtime="20231107 14:45:09.631" />
+                </branch>
+                <branch type="ELSE IF" condition="${var1} &lt; 0">
+                    <kw name="Log" library="BuiltIn">
+                        <arg>var1&lt;0</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <msg timestamp="20231107 14:45:09.631" level="TRACE">Arguments: [
+                            'var1&lt;0' ]</msg>
+                        <msg timestamp="20231107 14:45:09.631" level="INFO">var1&lt;0</msg>
+                        <msg timestamp="20231107 14:45:09.631" level="TRACE">Return: None</msg>
+                        <status status="PASS" starttime="20231107 14:45:09.631"
+                            endtime="20231107 14:45:09.631" />
+                    </kw>
+                    <status status="PASS" starttime="20231107 14:45:09.631"
+                        endtime="20231107 14:45:09.631" />
+                </branch>
+                <branch type="ELSE">
+                    <kw name="Log" library="BuiltIn">
+                        <arg>var1=0</arg>
+                        <doc>Logs the given message with the given level.</doc>
+                        <status status="NOT RUN" starttime="20231107 14:45:09.631"
+                            endtime="20231107 14:45:09.631" />
+                    </kw>
+                    <status status="NOT RUN" starttime="20231107 14:45:09.631"
+                        endtime="20231107 14:45:09.631" />
+                </branch>
+                <status status="PASS" starttime="20231107 14:45:09.630"
+                    endtime="20231107 14:45:09.631" />
+            </if>
+            <kw name="My KW1" type="TEARDOWN">
+                <arg>This is file test teardown.</arg>
+                <msg timestamp="20231107 14:45:09.632" level="TRACE">Arguments: [ ${message}='This
+                    is file test teardown.' ]</msg>
+                <kw name="Log" library="BuiltIn">
+                    <arg>${message}</arg>
+                    <doc>Logs the given message with the given level.</doc>
+                    <msg timestamp="20231107 14:45:09.632" level="TRACE">Arguments: [ 'This is file
+                        test teardown.' ]</msg>
+                    <msg timestamp="20231107 14:45:09.632" level="INFO">This is file test teardown.</msg>
+                    <msg timestamp="20231107 14:45:09.632" level="TRACE">Return: None</msg>
+                    <status status="PASS" starttime="20231107 14:45:09.632"
+                        endtime="20231107 14:45:09.632" />
+                </kw>
+                <msg timestamp="20231107 14:45:09.632" level="TRACE">Return: 'my kw1 return.'</msg>
+                <status status="PASS" starttime="20231107 14:45:09.631"
+                    endtime="20231107 14:45:09.632" />
+            </kw>
+            <tag>defaulttags</tag>
+            <tag>forcetags</tag>
+            <status status="PASS" starttime="20231107 14:45:09.620" endtime="20231107 14:45:09.632" />
+        </test>
+        <test id="s1-t4" name="Test4: user lib" line="82">
+            <kw name="My KW1" type="SETUP">
+                <arg>This is file test setup.</arg>
+                <msg timestamp="20231107 14:45:09.633" level="TRACE">Arguments: [ ${message}='This
+                    is file test setup.' ]</msg>
+                <kw name="Log" library="BuiltIn">
+                    <arg>${message}</arg>
+                    <doc>Logs the given message with the given level.</doc>
+                    <msg timestamp="20231107 14:45:09.633" level="TRACE">Arguments: [ 'This is file
+                        test setup.' ]</msg>
+                    <msg timestamp="20231107 14:45:09.633" level="INFO">This is file test setup.</msg>
+                    <msg timestamp="20231107 14:45:09.633" level="TRACE">Return: None</msg>
+                    <status status="PASS" starttime="20231107 14:45:09.633"
+                        endtime="20231107 14:45:09.633" />
+                </kw>
+                <msg timestamp="20231107 14:45:09.633" level="TRACE">Return: 'my kw1 return.'</msg>
+                <status status="PASS" starttime="20231107 14:45:09.633"
+                    endtime="20231107 14:45:09.633" />
+            </kw>
+            <kw name="Lib1 Func1" library="lib1">
+                <var>${v}</var>
+                <arg>1</arg>
+                <arg>2</arg>
+                <msg timestamp="20231107 14:45:09.633" level="TRACE">Arguments: [ '1' | '2' ]</msg>
+                <msg timestamp="20231107 14:45:09.633" level="TRACE">Return: '12'</msg>
+                <msg timestamp="20231107 14:45:09.633" level="INFO">${v} = 12</msg>
+                <status status="PASS" starttime="20231107 14:45:09.633"
+                    endtime="20231107 14:45:09.633" />
+            </kw>
+            <kw name="Log" library="BuiltIn">
+                <arg>${v}</arg>
+                <doc>Logs the given message with the given level.</doc>
+                <msg timestamp="20231107 14:45:09.634" level="TRACE">Arguments: [ '12' ]</msg>
+                <msg timestamp="20231107 14:45:09.634" level="INFO">12</msg>
+                <msg timestamp="20231107 14:45:09.634" level="TRACE">Return: None</msg>
+                <status status="PASS" starttime="20231107 14:45:09.634"
+                    endtime="20231107 14:45:09.634" />
+            </kw>
+            <kw name="Lib1 Func1" library="lib1">
+                <var>${v}</var>
+                <arg>${2}</arg>
+                <arg>${3}</arg>
+                <msg timestamp="20231107 14:45:09.634" level="TRACE">Arguments: [ 2 | 3 ]</msg>
+                <msg timestamp="20231107 14:45:09.634" level="TRACE">Return: 5</msg>
+                <msg timestamp="20231107 14:45:09.634" level="INFO">${v} = 5</msg>
+                <status status="PASS" starttime="20231107 14:45:09.634"
+                    endtime="20231107 14:45:09.634" />
+            </kw>
+            <kw name="Log" library="BuiltIn">
+                <arg>${V}</arg>
+                <doc>Logs the given message with the given level.</doc>
+                <msg timestamp="20231107 14:45:09.635" level="TRACE">Arguments: [ 5 ]</msg>
+                <msg timestamp="20231107 14:45:09.635" level="INFO">5</msg>
+                <msg timestamp="20231107 14:45:09.635" level="TRACE">Return: None</msg>
+                <status status="PASS" starttime="20231107 14:45:09.634"
+                    endtime="20231107 14:45:09.635" />
+            </kw>
+            <kw name="Get Name" library="lib2">
+                <var>${name}</var>
+                <msg timestamp="20231107 14:45:09.635" level="TRACE">Arguments: [ ]</msg>
+                <msg timestamp="20231107 14:45:09.636" level="TRACE">Return: 'xmlclone'</msg>
+                <msg timestamp="20231107 14:45:09.636" level="INFO">${name} = xmlclone</msg>
+                <status status="PASS" starttime="20231107 14:45:09.635"
+                    endtime="20231107 14:45:09.636" />
+            </kw>
+            <kw name="Log" library="BuiltIn">
+                <arg>${name}</arg>
+                <doc>Logs the given message with the given level.</doc>
+                <msg timestamp="20231107 14:45:09.636" level="TRACE">Arguments: [ 'xmlclone' ]</msg>
+                <msg timestamp="20231107 14:45:09.636" level="INFO">xmlclone</msg>
+                <msg timestamp="20231107 14:45:09.636" level="TRACE">Return: None</msg>
+                <status status="PASS" starttime="20231107 14:45:09.636"
+                    endtime="20231107 14:45:09.636" />
+            </kw>
+            <kw name="My KW1" type="TEARDOWN">
+                <arg>This is file test teardown.</arg>
+                <msg timestamp="20231107 14:45:09.636" level="TRACE">Arguments: [ ${message}='This
+                    is file test teardown.' ]</msg>
+                <kw name="Log" library="BuiltIn">
+                    <arg>${message}</arg>
+                    <doc>Logs the given message with the given level.</doc>
+                    <msg timestamp="20231107 14:45:09.637" level="TRACE">Arguments: [ 'This is file
+                        test teardown.' ]</msg>
+                    <msg timestamp="20231107 14:45:09.637" level="INFO">This is file test teardown.</msg>
+                    <msg timestamp="20231107 14:45:09.637" level="TRACE">Return: None</msg>
+                    <status status="PASS" starttime="20231107 14:45:09.636"
+                        endtime="20231107 14:45:09.637" />
+                </kw>
+                <msg timestamp="20231107 14:45:09.637" level="TRACE">Return: 'my kw1 return.'</msg>
+                <status status="PASS" starttime="20231107 14:45:09.636"
+                    endtime="20231107 14:45:09.637" />
+            </kw>
+            <tag>defaulttags</tag>
+            <tag>forcetags</tag>
+            <status status="PASS" starttime="20231107 14:45:09.632" endtime="20231107 14:45:09.637" />
+        </test>
+        <test id="s1-t5" name="Test5: user lib socpe test" line="92">
+            <kw name="My KW1" type="SETUP">
+                <arg>This is file test setup.</arg>
+                <msg timestamp="20231107 14:45:09.641" level="TRACE">Arguments: [ ${message}='This
+                    is file test setup.' ]</msg>
+                <kw name="Log" library="BuiltIn">
+                    <arg>${message}</arg>
+                    <doc>Logs the given message with the given level.</doc>
+                    <msg timestamp="20231107 14:45:09.642" level="TRACE">Arguments: [ 'This is file
+                        test setup.' ]</msg>
+                    <msg timestamp="20231107 14:45:09.642" level="INFO">This is file test setup.</msg>
+                    <msg timestamp="20231107 14:45:09.642" level="TRACE">Return: None</msg>
+                    <status status="PASS" starttime="20231107 14:45:09.641"
+                        endtime="20231107 14:45:09.642" />
+                </kw>
+                <msg timestamp="20231107 14:45:09.642" level="TRACE">Return: 'my kw1 return.'</msg>
+                <status status="PASS" starttime="20231107 14:45:09.641"
+                    endtime="20231107 14:45:09.642" />
+            </kw>
+            <kw name="Get Name" library="lib2">
+                <var>${name}</var>
+                <msg timestamp="20231107 14:45:09.642" level="TRACE">Arguments: [ ]</msg>
+                <msg timestamp="20231107 14:45:09.643" level="TRACE">Return: 'xmlclone'</msg>
+                <msg timestamp="20231107 14:45:09.643" level="INFO">${name} = xmlclone</msg>
+                <status status="PASS" starttime="20231107 14:45:09.642"
+                    endtime="20231107 14:45:09.643" />
+            </kw>
+            <kw name="Log" library="BuiltIn">
+                <arg>${name}</arg>
+                <doc>Logs the given message with the given level.</doc>
+                <msg timestamp="20231107 14:45:09.643" level="TRACE">Arguments: [ 'xmlclone' ]</msg>
+                <msg timestamp="20231107 14:45:09.643" level="INFO">xmlclone</msg>
+                <msg timestamp="20231107 14:45:09.643" level="TRACE">Return: None</msg>
+                <status status="PASS" starttime="20231107 14:45:09.643"
+                    endtime="20231107 14:45:09.643" />
+            </kw>
+            <kw name="My KW1" type="TEARDOWN">
+                <arg>This is file test teardown.</arg>
+                <msg timestamp="20231107 14:45:09.643" level="TRACE">Arguments: [ ${message}='This
+                    is file test teardown.' ]</msg>
+                <kw name="Log" library="BuiltIn">
+                    <arg>${message}</arg>
+                    <doc>Logs the given message with the given level.</doc>
+                    <msg timestamp="20231107 14:45:09.644" level="TRACE">Arguments: [ 'This is file
+                        test teardown.' ]</msg>
+                    <msg timestamp="20231107 14:45:09.644" level="INFO">This is file test teardown.</msg>
+                    <msg timestamp="20231107 14:45:09.644" level="TRACE">Return: None</msg>
+                    <status status="PASS" starttime="20231107 14:45:09.644"
+                        endtime="20231107 14:45:09.644" />
+                </kw>
+                <msg timestamp="20231107 14:45:09.644" level="TRACE">Return: 'my kw1 return.'</msg>
+                <status status="PASS" starttime="20231107 14:45:09.643"
+                    endtime="20231107 14:45:09.644" />
+            </kw>
+            <tag>defaulttags</tag>
+            <tag>forcetags</tag>
+            <status status="PASS" starttime="20231107 14:45:09.638" endtime="20231107 14:45:09.644" />
+        </test>
+        <kw name="My KW1" type="TEARDOWN">
+            <arg>This is file suite teardown.</arg>
+            <msg timestamp="20231107 14:45:09.645" level="TRACE">Arguments: [ ${message}='This is
+                file suite teardown.' ]</msg>
+            <kw name="Log" library="BuiltIn">
+                <arg>${message}</arg>
+                <doc>Logs the given message with the given level.</doc>
+                <msg timestamp="20231107 14:45:09.645" level="TRACE">Arguments: [ 'This is file
+                    suite teardown.' ]</msg>
+                <msg timestamp="20231107 14:45:09.645" level="INFO">This is file suite teardown.</msg>
+                <msg timestamp="20231107 14:45:09.645" level="TRACE">Return: None</msg>
+                <status status="PASS" starttime="20231107 14:45:09.645"
+                    endtime="20231107 14:45:09.645" />
+            </kw>
+            <msg timestamp="20231107 14:45:09.645" level="TRACE">Return: 'my kw1 return.'</msg>
+            <status status="PASS" starttime="20231107 14:45:09.644" endtime="20231107 14:45:09.645" />
+        </kw>
+        <doc>This is document. 演示基础语法
+            New line document.
+            示例代码里面有部分大小写混写是故意用于演示的，RF不区分大小写</doc>
+        <status status="PASS" starttime="20231107 14:45:09.582" endtime="20231107 14:45:09.645" />
+    </suite>
+    <statistics>
+        <total>
+            <stat pass="5" fail="0" skip="0">All Tests</stat>
+        </total>
+        <tag>
+            <stat pass="1" fail="0" skip="0">case1</stat>
+            <stat pass="4" fail="0" skip="0">defaulttags</stat>
+            <stat pass="5" fail="0" skip="0">forcetags</stat>
+            <stat pass="1" fail="0" skip="0">P0</stat>
+        </tag>
+        <suite>
+            <stat pass="5" fail="0" skip="0" id="s1" name="Test 1">Test 1</stat>
+        </suite>
+    </statistics>
+    <errors>
+        <msg timestamp="20231107 14:45:09.609" level="WARN">Warning from a library.</msg>
+        <msg timestamp="20231107 14:45:09.635" level="WARN">Warning from a library.</msg>
+        <msg timestamp="20231107 14:45:09.642" level="WARN">Warning from a library.</msg>
+    </errors>
+</robot>
