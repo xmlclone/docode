@@ -1,7 +1,7 @@
 from robot.api import logger
 
 
-class lib2(object):
+class lib4(object):
     """如果模块内的类名和模块名一致，也可以直接引入使用
 
     - Formatting with **bold** and *italic*.
