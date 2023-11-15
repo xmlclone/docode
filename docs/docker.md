@@ -10,8 +10,13 @@ docker images
 docker ps
 docker ps -a
 
+# 启动容器
 docker run --rm -it ubuntu /bin/bash
+# 进入容器
 docker exec -it ubuntu /bin/bash
+
+# root用户进入容器
+docker exec -u 0 -it ubuntu /bin/bash
 ```
 
 # 安装
