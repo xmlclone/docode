@@ -1,3 +1,17 @@
+# 常用操作
+
+```sh
+```
+
+# 国内访问受限
+
+访问下面的所有域名IP，更新到hosts文件后重新访问即可，比如linux下一般是修改`/etc/hosts`，注意备份；
+如果访问失效，可以重新访问下面地址后更新IP。
+
+https://ip.tool.chinaz.com/assets-cdn.github.com
+https://ip.tool.chinaz.com/github.global.ssl.fastly.net
+https://ip.tool.chinaz.com/github.com
+
 # 基本命令
 
 ```shell
