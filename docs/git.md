@@ -12,6 +12,13 @@ https://ip.tool.chinaz.com/assets-cdn.github.com
 https://ip.tool.chinaz.com/github.global.ssl.fastly.net
 https://ip.tool.chinaz.com/github.com
 
+> 国内建议使用以下配置
+
+```sh
+151.101.113.194 github.global.ssl.fastly.net
+192.30.253.112 github.com
+```
+
 # 基本命令
 
 ```shell
