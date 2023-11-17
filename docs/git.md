@@ -17,6 +17,9 @@ https://ip.tool.chinaz.com/github.com
 ```sh
 151.101.113.194 github.global.ssl.fastly.net
 192.30.253.112 github.com
+185.199.109.153 assets-cdn.github.com
+185.199.110.153 assets-cdn.github.com
+185.199.111.153 assets-cdn.github.com
 ```
 
 # 基本命令
@@ -101,7 +104,7 @@ git config --global user.name test
 git config --global user.email test@test.com
 ssh-keygen -t rsa -C test@test.com -b 4096
 
-# 配置代理
+# 配置代理(全局配置，如果只想对当前git仓库生效，可以不用--global选项)
 git config --global http.proxy "127.0.0.1:7790"
 git config --global https.proxy "127.0.0.1:7790"
 # 取消代理配置

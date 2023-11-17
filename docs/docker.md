@@ -17,6 +17,9 @@ docker exec -it ubuntu /bin/bash
 
 # root用户进入容器
 docker exec -u 0 -it ubuntu /bin/bash
+
+# 直接查看命令，比如想查看时间的date命令
+docker exec -it ubuntu /bin/bash -c "date"
 ```
 
 # 安装
