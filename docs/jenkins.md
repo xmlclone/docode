@@ -8,7 +8,9 @@
 # 访问8080端口即可
 # 可以通过docker logs -f jenkins查看安装需要的initpassword
 docker run --rm -itd -p 8080:8080 -p 50000:50000 jenkins
-docker run --itd --name myjenkins -p 8080:8080 -p 50000:50000 -v /your/home:/var/jenkins_home jenkins
+docker run -itd --name myjenkins -p 8080:8080 -p 50000:50000 -v /your/home:/var/jenkins_home jenkins
+# 假设在windows下挂载
+docker run -itd --name jenkins -p 8080:8080 -p 50000:50000 -v D:\dockermount\jenkins:/var/jenkins_home jenkins
 ```
 
 # 变量
