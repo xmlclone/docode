@@ -1,4 +1,8 @@
 '''
+pip install webdrivermanager
+webdrivermanager firefox chrome --linkpath /usr/local/bin
+
+
 环境：
 conda create -n vdocode python=3.12
 selenium==4.14.0
