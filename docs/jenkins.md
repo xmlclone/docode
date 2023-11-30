@@ -92,7 +92,7 @@ msg.setText("This is new email content.")
 
 ### Default Content
 
-可以使用脚本模板的方式，把groovy脚本放置到`$JENINS_HOME/email-templates`目录下，如果不存在则自己创建，假设文件名为`rf_email_template.groovy`，则在`Default Content`里面填入内容为: `${SCRIPT, template="rf_email_template.groovy"}`，groovy脚本可以参考`demo_file/jenkins`下相关脚本文件。
+可以使用脚本模板的方式，把groovy脚本放置到`$JENKINS_HOME/email-templates`目录下，如果不存在则自己创建，假设文件名为`rf_email_template.groovy`，则在`Default Content`里面填入内容为: `${SCRIPT, template="rf_email_template.groovy"}`，groovy脚本可以参考`demo_file/jenkins`下相关脚本文件。
 
 # QA
 
