@@ -76,6 +76,7 @@ local_scheme = "no-local-version"
 pip uninstall mypkg1
 # 需要先python -m build后才可以使用，命令执行目录和python -m build在同一级，否则需要更改 .参数
 # 不用重复使用下面命令，使用一次即可
+# 但如果[project.scripts]有变更，也需要重新使用下面的命令
 pip install -e .
 ```
 
@@ -137,7 +138,7 @@ tox run -e py310 -- -v
 # 参考链接
 
 1. [官方文档](https://setuptools.pypa.io/en/latest/)
-2. [MANIFEST.in配置参考](https://packaging.python.org/en/latest/guides/using-manifest-in/#manifest-in-commands)
+2. [MANIFEST.in配置参考](https://packaging.python.org/en/latest/guides/using-manifest-in/#manifest-in-commands) or [there](https://setuptools.pypa.io/en/latest/userguide/miscellaneous.html)
 3. [Why you shouldn’t invoke setup.py directly](https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html)
 4. [pyproject.toml配置详解](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html)
 5. [twine](https://twine.readthedocs.io/en/stable/index.html)

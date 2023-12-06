@@ -161,6 +161,7 @@ git reset --hard HEAD^
 
 # git status 看见提示有xx个commit，提示可以git pull更新，此时如果就想保持当前代码，比如前面忘了设置tag，想给这里代码加tag，可以在这里直接操作
 git tag -a vv
+git tag -a -m "commit message"  tagnum
 git push origin vv
 ```
 
