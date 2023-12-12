@@ -26,6 +26,15 @@ RobotFramework
     # 指定python库查找路径，多个路径通过:分割
     robot -P/--pythonpath
 
+    # 失败重试(第一次执行)，其实只需要--output即可，但是为了看出来每次log report区别，下面指定了对应的参数(实际使用中，只需要--output即可)
+    robot --output 1_output.xml --log 1_log.html --report 1_report.html test.robot
+    # 如果在jenkins等进行构建，需要增加参数 --nostatusrc 以保证构建顺序
+    # 重试
+    robot --output 2_output.xml --log 2_log.html --report 2_report.html -R 1_output.xml test.robot
+    # 合并日志(就算只有一次执行，只要知道xml文件，也可以合并，并不是非得有多个xml文件)
+    # 默认不会再次生成output.xml，需要通过--output output.xml参数指定(当然如果不需要也可也不指定)
+    rebot --output output.xml --merge *.xml
+
 
 参考链接
 --------------

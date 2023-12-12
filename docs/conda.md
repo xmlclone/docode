@@ -23,6 +23,11 @@ conda deactivate mybook
 
 # conda环境下的pip升级
 python -m pip install -U pip
+
+# linux下，如果安装时，最后指定了自动初始化conda base为基础shell，可以通过以下命令取消此默认配置
+# 如果最后不指定conda base为基础shell，需要自己增加conda的路径到环境变量PATH下
+# 如果指定了，只需要重进shell即可看见base环境
+conda config --set auto_activate_base false
 ```
 
 # 修改conda源

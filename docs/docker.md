@@ -90,6 +90,7 @@ rm -rf /var/lib/docker
 
 > 注意多个参数，需要有逗号分隔
 > 百度的地址: https://mirror.baidubce.com
+> windows的配置文件可能在`C:\Users\<username>\.docker`目录下
 
 # 基本使用
 
