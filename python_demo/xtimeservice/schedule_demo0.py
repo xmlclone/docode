@@ -4,6 +4,8 @@ pip install schedule
 
 import schedule
 import logging
+import time
+from datetime import datetime, timedelta
 
 logging.basicConfig(format="%(asctime)s %(message)s", level=logging.INFO)
 
@@ -20,6 +22,28 @@ schedule.every().seconds.do(job, 'job3')
 # job表示上面设置了多少个schedule，并不影响循环执行
 print(len(schedule.jobs))
 
+# for j in schedule.jobs:
+    # for a in dir(j):
+    #     if not a.startswith('__'):
+    #         try:
+    #             print(a, getattr(j, a))
+    #         except:
+    #             pass
+    # break
+    # print(j.next_run)
+
+g_next_run_time = None
+def print_next_run():
+    global g_next_run_time
+    next_run_time = schedule.jobs[0].next_run
+    for job in schedule.jobs:
+        job_run_time = job.next_run
+        if job_run_time < next_run_time:
+            next_run_time = job_run_time
+    if g_next_run_time != next_run_time:
+        g_next_run_time = next_run_time
+        print("下一个周期:", g_next_run_time)
 
 while True:
+    print_next_run()
     schedule.run_pending()

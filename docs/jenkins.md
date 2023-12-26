@@ -42,6 +42,13 @@ $DEFAULT_PRESEND_SCRIPT
 
 # 配置
 
+## 构建命令
+
+```sh
+# 如果某条命令失败，默认情况下后续命令不会继续执行，如果需要继续执行，需要在命令后面加  || true，比如
+robot --nostatusrc --output 2_output.xml --log 2_log.html --report 2_report.html -R 1_output.xml . || true
+```
+
 ## 定时构建
 
 ```sh
@@ -94,6 +101,10 @@ msg.setText("This is new email content.")
 
 可以使用脚本模板的方式，把groovy脚本放置到`$JENKINS_HOME/email-templates`目录下，如果不存在则自己创建，假设文件名为`rf_email_template.groovy`，则在`Default Content`里面填入内容为: `${SCRIPT, template="rf_email_template.groovy"}`，groovy脚本可以参考`demo_file/jenkins`下相关脚本文件。
 
+# API
+
+1. `groovy`里面可以直接使用`.`的方式替代`java`的`getXXX`，比如`https://javadoc.jenkins.io/plugin/robot/hudson/plugins/robot/model/RobotResult.html#getAllSuites()`这个方法，在`groovy`里面可以直接使用`allSuites`获取到。
+
 # QA
 
 ## Opening Robot Framework report failed
@@ -121,5 +132,6 @@ System.setProperty("hudson.model.DirectoryBrowserSupport.CSP","sandbox allow-scr
 # 参考链接
 
 * [RF日志文件无法打开(Opening Robot Framework log failed)](https://plugins.jenkins.io/robot/#plugin-content-log-file-not-showing-properly)
+* [Jenkins API](https://javadoc.jenkins.io/index.html)
 
 

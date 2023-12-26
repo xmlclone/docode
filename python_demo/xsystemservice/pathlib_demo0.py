@@ -1,4 +1,6 @@
+import os
 from pathlib import Path
+
 
 # __file__才是获取当前文件，而不管文件被哪里调用
 path = Path(__file__)
@@ -26,3 +28,16 @@ for i in dir(path):
 # 获取更多父目录
 print(list(path.parents))
 print(path.parents[2])
+
+
+# 遍历目录
+path = path.parents[2]
+print(path)
+# iterdir只会遍历当前目录，并不会遍历子目录
+for c in path.iterdir():
+    print(c, c.stem)
+
+# WindowsPath 无法使用walk；如果要遍历，要么使用os.walk，要么使用rglob('*')
+# ********************下面输出较长
+for f in Path(path).rglob('*'):
+    print(f)

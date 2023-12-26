@@ -697,6 +697,7 @@ services:
     environment: #-e
       - XYZ=123 #容器内就会有XYZ这个环境变量，比如linux上，可通过$XYZ获取
       - P_HOSTNAME=${HOSTNAME} #把宿主机的HOSTNAME传递给docker容器P_HOSTNAME
+      - PASSWD  # 也可以直接使用此方式继承宿主机的环境变量
     volumes:
       - "local_path:docker_path"
     ports:

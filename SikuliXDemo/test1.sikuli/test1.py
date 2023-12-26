@@ -4,8 +4,11 @@
 # doubleClick(obj)
 
 # 根据图片匹配点击元素
-click("1.png")
+# click("1.png")
 
 # 识别图片内容
-_text = OCR.readText("2.png")
+# _text = OCR.readText("2.png")
+# print(_text)
+
+_text = OCR.readText("3.png")
 print(_text)
