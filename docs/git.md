@@ -1,6 +1,17 @@
 # 常用操作
 
 ```sh
+# 查看已经被跟踪的文件
+git ls-files -c
+# 查看被修改的文件(新增的不算)
+git ls-files -m
+# 查看被删除的文件(已经被跟踪的)
+git ls-files -d
+# 查看新增的将要被跟踪的文件
+git ls-files -o --exclude-standard
+
+
+
 ```
 
 # 国内访问受限

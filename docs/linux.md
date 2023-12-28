@@ -28,6 +28,13 @@ B上面通过`ssh-keygen -t rsa -C test@test.com -b 4096`生成公钥，文件`i
 
 其中`authorized_keys`文件也在`.ssh`目录下，如果没有就创建一个
 
+# 文件目录
+
+```sh
+# 软链接
+ln -s path/to/src path/to/link
+```
+
 # 包安装
 
 ```sh
@@ -60,6 +67,9 @@ mount /dev/sda1 /mnt/sda1
 
 # 取消挂载
 umount /mnt/sda1
+
+# 如果需要永久挂载(上面方式重启系统后会失效，需要重新挂载)，需要在/etc/fstab增加内容
+/dev/sda1 /mnt/sda1 auto defaults 0 0
 ```
 
 # 字体
