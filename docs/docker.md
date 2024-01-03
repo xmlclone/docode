@@ -706,6 +706,22 @@ services:
       - /bin/bash
 ```
 
+## 宿主机环境变量修改后未生效
+
+不管是上面哪种环境变量配置方式，直接使用`stop start`和`restart`均不会生效。也就是宿主机的环境变量变更后，容器内无法使用新的环境变量
+
+```sh
+docker stop nginx
+docker start nginx
+docker restart nginx
+
+docker-compose stop
+docker-compose start
+docker-compose restart
+```
+
+如果是`docker-compose`，需要使用`docker-compose down`和`docker-compose up -d`来使环境变量重新生效。
+
 # Dockerfile
 
 ```dockerfile

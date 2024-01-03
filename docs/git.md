@@ -298,7 +298,7 @@ git checkout 2-test-issue
 
 ## 中文乱码
 
-```
+```sh
 git config --global core.quotepath false
 ```
 
