@@ -57,3 +57,7 @@ channels:
 ssl_verify: true
 show_channel_urls: true
 ```
+
+# linux虚拟环境包路径
+
+一般在`/anaconda3/envs/<you venv name>/lib/python3.9/site-packages`下

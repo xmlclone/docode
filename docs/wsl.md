@@ -10,7 +10,8 @@ wsl -u root -d Ubuntu-22.04
 
 # linux里面访问宿主机资源
 # 一般挂载在/mnt目录下，比如c盘，就在/mnt/c
-
+# windows访问wsl
+# 一般通过windows的资源管理器访问 \\wsl.localhost\Ubuntu-22.04，通常资源管理器左边会显示Linux共享
 
 # 查看正在运行的
 wsl --list --running

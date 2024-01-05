@@ -27,4 +27,4 @@ tempdir.cleanup()
 # 也支持with
 # ignore_cleanup_errors 参数3.10才增加的
 with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tempdir:
-    print(f"{tempdir.name=}")
+    print(f"{tempdir}") # 注意这里不能再使用tempdir.name
