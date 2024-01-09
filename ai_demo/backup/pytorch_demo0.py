@@ -1,4 +1,5 @@
 import torch
+import numpy as np
 
 
 # tensor 张量
@@ -37,6 +38,28 @@ tensor.ndim=3, tensor.shape=torch.Size([1, 3, 3]), tensor.size()=torch.Size([1, 
 R = torch.rand(size=(1, 2, 3, 4))
 print(R)
 print(f"{R.device=}")
+
+
+# 创建一个空的张量
+empty_tensor = torch.empty(3, 3)
+print(f"{empty_tensor=}")
+
+# 创建一个零填充的张量
+zeros_tensor = torch.zeros(3, 3)
+print(f"{zeros_tensor=}")
+
+# 创建一个随机初始化的张量
+random_tensor = torch.rand(3, 3)
+print(f"{random_tensor=}")
+
+# 从列表创建张量
+list_tensor = torch.tensor([1, 2, 3, 4, 5])
+print(f"{list_tensor=}")
+
+# 从NumPy数组创建张量
+numpy_array = np.array([1, 2, 3, 4, 5])
+numpy_tensor = torch.from_numpy(numpy_array)
+print(f"{numpy_tensor=}")
 
 
 # 验证torch是否可以访问gpu

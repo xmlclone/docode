@@ -278,6 +278,7 @@ docker save -o xxx.tar xxx:v1.0
 # docker load方式不变，但是不会出现None的情况
 docker load < xxx.tar
 docker load -i xxx.tar
+# docker load的镜像tag如果已经存在，先前的image会被替换为none，故要注意删除none
 
 # 在新机器上查看镜像是否已经生成
 docker images

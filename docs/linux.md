@@ -35,6 +35,17 @@ B上面通过`ssh-keygen -t rsa -C test@test.com -b 4096`生成公钥，文件`i
 ln -s path/to/src path/to/link
 ```
 
+# 文本处理
+
+```sh
+# awk
+# 获取docker image id
+docker images | grep none | awk '{print $3}'
+
+# 根据获取到的id删除镜像
+docker images | grep none | awk '{print $3}' | xargs docker rmi
+```
+
 # 包安装
 
 ```sh
@@ -84,7 +95,6 @@ export LANG=zh_CN.UTF-8
 # 查看字符编码
 locale
 ```
-
 
 # 日期/时间处理
 
