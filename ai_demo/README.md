@@ -8,6 +8,8 @@ pip install transformers
 pip install datasets
 pip install soundfile
 pip install librosa
+
+pip install matplotlib
 ```
 
 # 基础目录
