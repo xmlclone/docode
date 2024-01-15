@@ -1,0 +1,11 @@
+text,label,classify,from
+I love this movie,0,,
+This book is boring,1,,
+Great experience,2,,
+Terrible service,3,,
+I love this book,4,,
+This movie is boring,5,,
+Bad experience,6,,
+Great service,7,,
+I hate this movie,8,,
+I hate this fruit,9,,
