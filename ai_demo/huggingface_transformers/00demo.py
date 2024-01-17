@@ -33,3 +33,8 @@ predicted_class_id = argmax.item()
 print(f"{predicted_class_id=}\n")
 label = model.config.id2label[predicted_class_id]
 print(f"{label=}\n")
+
+
+# 也可以结合使用
+classifier = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
+print(classifier('I like the dog.'))

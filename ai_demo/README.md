@@ -66,4 +66,11 @@ model = AutoModel.from_pretrained("username/repo_name")
 
 # 参考链接
 
+## huggingface
+
 1. [环境变量](https://huggingface.co/docs/huggingface_hub/main/en/package_reference/environment_variables)
+
+## modelscope
+
+1. [魔搭](https://www.modelscope.cn/home)
+2. [魔搭github](https://github.com/modelscope/modelscope)
