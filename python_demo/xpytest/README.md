@@ -61,11 +61,11 @@ pytest --trace-config
 
 > `pytest --trace-config`信息如下:
 
-![](../../imgs/pytest1.png)
+![](../../docs/imgs/pytest1.png)
 
 > `pytest --fixtures`信息如下:
 
-![](../../imgs/pytest2.png)
+![](../../docs/imgs/pytest2.png)
 
 # 常用插件
 

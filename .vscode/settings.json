@@ -3,5 +3,7 @@
     "java.configuration.updateBuildConfiguration": "automatic",
     "esbonio.sphinx.confDir": "",
     "restructuredtext.preview.docutils.disabled": true,
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic"
 }

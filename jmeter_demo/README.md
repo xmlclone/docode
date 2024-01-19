@@ -236,11 +236,11 @@ docker run -p 8086:8086 -v $PWD/config.yml:/etc/influxdb2/config.yml influxdb:2.
 
 jmeter配置如下:
 
-![](../imgs/jmeter1.png)
+![](../docs/imgs/jmeter1.png)
 
 > 注意本文的influxdb是基于2版本以上的，故配置和1会有不同，其中url后面db就是influxdb里面bucket的意思，注意增加apitoken
 
-![](../imgs/jmeter2.png)
+![](../docs/imgs/jmeter2.png)
 
 # 参考链接
 
