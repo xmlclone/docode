@@ -12,6 +12,8 @@ from collections import (
 logging.basicConfig(format="%(lineno)dline:  %(message)s", level=logging.INFO)
 
 
+print('=' * 100)
+print('namedtuple示例')
 Point1 = namedtuple("Point1", ['x', 'y'])
 p1 = Point1(x=1, y=2)
 logging.info(f"{p1.x=}, {p1.y=}; {p1[0]=}, {p1[1]=}, {p1._asdict()}")
@@ -28,8 +30,10 @@ logging.info(f"{new_p1.x=}")
 Point3 = namedtuple("Point3", ['x', 'y', 'z'], defaults=[1, 2])
 p3 = Point3(5)
 logging.info(p3._asdict())
+print('=' * 100)
 
 
+print('deque示例')
 deque1 = deque()
 deque1.append(1)
 deque1.append(2)
@@ -42,3 +46,24 @@ logging.info(f"{deque1=}, {v=}")
 v = deque1.popleft()
 logging.info(f"{deque1=}, {v=}")
 
+def roundrobin(*iterables):
+    "roundrobin('ABC', 'D', 'EF') --> A D E B F C"
+    logging.info(iterables) # ('ABC', 'D', 'EF')
+    iterators = deque(map(iter, iterables)) # ['ABC', 'D', 'EF'] 但是注意，这里的三个元素，每个都已经是一个迭代器
+    # print(list(iterators))
+    while iterators:
+        try:
+            while True:
+                # iterators[0]就是deque的第一个元素(一共3个元素，每个都是迭代器)
+                # next就是每次返回deque第一个元素的第一个值
+                yield next(iterators[0])
+                # 然后把iterators往前移动
+                iterators.rotate(-1)
+        except StopIteration:
+            # Remove an exhausted iterator.
+            # 当deque的某个元素(一共3个元素)无法迭代的时候，就把它从左边弹出去，因为前面已经往前移动了
+            iterators.popleft()
+
+# roundrobin1('ABC', 'D', 'EF')
+print(list(roundrobin('ABC', 'D', 'EF')))
+print('=' * 100)
