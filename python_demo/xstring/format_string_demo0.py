@@ -23,6 +23,7 @@ class UserDefineObject:
 obj = UserDefineObject()
 
 
+# ================================================================format================================================================
 print("{}".format("ni hao"))
 print("{0} {1}".format("ni", "hao"))
 print("{a} {b} {a}".format(a="111", b="222"))
