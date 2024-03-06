@@ -7,6 +7,29 @@ vi /etc/sysconfig/network-scripts/<network-name>
 service network restart
 systemctl restart network
 systemctl restart NetworkManager
+
+
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=dhcp
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp1s0
+UUID=ffabaa68-f443-48a3-a4ca-b509673a7fc1
+DEVICE=enp1s0
+ONBOOT=yes
+
+
+BOOTPROTO=static
+IPADDR=<your_static_ip>
+NETMASK=<your_subnet_mask>
+GATEWAY=<your_gateway_ip>
+DNS1=<your_dns_server_ip>
 ```
 
 # ssh访问
