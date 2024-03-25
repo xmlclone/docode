@@ -11,7 +11,8 @@ git ls-files -d
 git ls-files -o --exclude-standard
 
 
-
+# 恢复到add之前
+git reset HEAD .
 ```
 
 # 国内访问受限

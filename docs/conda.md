@@ -58,6 +58,16 @@ ssl_verify: true
 show_channel_urls: true
 ```
 
+# 重命名虚拟环境名
+
+```sh
+# 一般通过重命名envs下的目录名即可更新
+
+# 但在wsl下遇见更新目录名并激活虚拟环境后，执行pip或者其它比如locust会提示找不到python解释器
+# 仔细看日志，发现查找的python解释器路径还是原始的目录名，解决办法如下
+# 暂时未解决，目前使用删除了旧的虚拟环境重新创建
+```
+
 # linux虚拟环境包路径
 
 一般在`/anaconda3/envs/<you venv name>/lib/python3.9/site-packages`下
