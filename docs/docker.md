@@ -92,6 +92,11 @@ rm -rf /var/lib/docker
 > 百度的地址: https://mirror.baidubce.com
 > windows的配置文件可能在`C:\Users\<username>\.docker`目录下
 
+## 配置为自己的阿里云镜像
+
+1. 访问并登录：https://cr.console.aliyun.com
+2. 找到镜像工具-镜像加速器，按照说明配置即可
+
 # 基本使用
 
 ```shell
