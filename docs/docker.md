@@ -150,7 +150,8 @@ docker cp 220e464220de:/usr/local/lib/python3.6/site-packages/urllib3/connection
 # 查看log
 docker logs [ID]
 # -f作用类似于tail -f，-t是输出时间戳
-docker logs -f -t [ID]
+# -n输出多少行日志，默认是all，故如果日志过多用-f会比较久，一般配合-n使用
+docker logs -f -t -n 100 [ID]
 
 # 停止容器
 docker stop [ID]

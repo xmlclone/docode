@@ -119,6 +119,13 @@ systemctl reload sshd
 ln -s path/to/src path/to/link
 ```
 
+# 文件查找
+
+```sh
+# 查找超过1G的文件
+find / -type f -size +1G
+```
+
 # 文本处理
 
 ```sh
@@ -128,6 +135,17 @@ docker images | grep none | awk '{print $3}'
 
 # 根据获取到的id删除镜像
 docker images | grep none | awk '{print $3}' | xargs docker rmi
+```
+
+# 压缩解压
+
+```sh
+# 打包
+tar -czvf xxx.tar xxx
+# 解压
+tar -xvf xxx.tar
+# 解压到指定目录
+tar -xvf xxx.tar -C path/to/dst
 ```
 
 # 包安装

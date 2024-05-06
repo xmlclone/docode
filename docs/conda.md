@@ -16,7 +16,7 @@ conda create -n mybook python=3.11
 # 直接安装，不提示确认信息
 conda create -n mybook python=3.11 -y
 
-# 激活虚拟环境
+# 激活虚拟环境(如果是没有activate命令，可以使用conda init后重新打开shell尝试)
 conda activate mybook
 # 退出虚拟环境
 conda deactivate mybook
@@ -25,7 +25,7 @@ conda deactivate mybook
 python -m pip install -U pip
 
 # linux下，如果安装时，最后指定了自动初始化conda base为基础shell，可以通过以下命令取消此默认配置
-# 如果最后不指定conda base为基础shell，需要自己增加conda的路径到环境变量PATH下
+# 如果最后不指定conda base为基础shell，需要自己增加conda的路径到环境变量PATH下，一般修改~/.bashrc 修改 export PATH=$PATH:path/to/conda 后使用source ~/.bashrc生效，并且使用conda init后重新打开shell，才能使用conda activate xxx
 # 如果指定了，只需要重进shell即可看见base环境
 conda config --set auto_activate_base false
 ```
