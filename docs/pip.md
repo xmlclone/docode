@@ -14,6 +14,15 @@ pip install -r requirements.txt
 
 # 指定安装源
 pip install selenium -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+# 下载包(依赖包也会被下载) -d 指定下载目录
+pip download requests -d .
+pip download -r requirements.txt -d .
+# 从本地安装包，包括依赖
+# --no-index指示不要从pypi等查找包
+# --find-links指示本地包路径
+pip install --no-index --find-links=/path/to/local/directory requests
 ```
 
 # 源配置
