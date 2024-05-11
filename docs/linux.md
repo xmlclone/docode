@@ -1,5 +1,27 @@
 [toc]
 
+# 常用
+
+```sh
+# 每隔1秒输出 nvidia-smi 命令结果
+watch -n 1 nvidia-smi
+
+# 统计命令wc
+# 默认显示3个数字，分别表示 行 单词数 字符数(包括空格)
+# 即分别表示各参数的输出 wc -l, wc -w, wc -c
+# 还有一个参数 wc -m 和 -c 类似
+ls | wc
+
+# find 第一个指定的查找目录，比如下面的.表示当前目录下查找
+# -type 可以不指定
+# 查找大于1G的文件
+find . -type f -size +1G
+# 并输出每个文件大小
+find . -type f -size +1G -exec ls -lh {} \;
+# 根据文件名查找
+find . -type f -name test.log
+```
+
 # 网络
 
 ## centos

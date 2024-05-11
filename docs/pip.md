@@ -13,6 +13,8 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 # 指定安装源
+# 当然也可以使用-f参数
+# -i是覆盖默认的查找；-f不会覆盖默认的查找，当默认查找不到指定的包时-f才生效
 pip install selenium -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
@@ -54,6 +56,15 @@ trusted-host = pypi.tuna.tsinghua.edu.cn
 ```conf
 [global]
 index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+```conf
+; 阿里云
+[global]
+index-url=http://mirrors.cloud.aliyuncs.com/pypi/simple/
+
+[install]
+trusted-host=mirrors.cloud.aliyuncs.com
 ```
 
 ## 搭建自己源服务

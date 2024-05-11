@@ -58,6 +58,16 @@ ssl_verify: true
 show_channel_urls: true
 ```
 
+设置完成后，需要使用下列命令:
+
+```sh
+# 清楚索引
+conda clean -i
+
+# 查看是否配置成功
+conda info
+```
+
 # 重命名虚拟环境名
 
 ```sh
