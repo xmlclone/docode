@@ -77,6 +77,9 @@ mypkg1 = "mypkg1.__main__:run"
 
 # pip install setuptools_scm
 # 需要结合版本控制工具来自动生成版本号，比如git，需要能访问.git目录，更多规则参考README文档
+# 默认情况下，使用了git add 和 git commit 后，系统会自动的生成devXX的版本
+# 如果某次使用了 git tag -a 1.0.0 -m 1.0.0，即有了这个1.0.0的tag，系统会自动的把版本号设置为这个1.0.0
+# 在没有下次使用git tag之前，就会在上一次的tag后增加，并使用devXX作为递增
 [tool.setuptools_scm]
 write_to = "mypkg1/_version.py"
 local_scheme = "no-local-version"

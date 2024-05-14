@@ -4,6 +4,8 @@
 
 虽然本文在setuptools下，但本文不仅限于`setuptools`，本文包含了一般python的打包、分发、构建、测试等，比如包含了`tox`、`mypy`等。
 
+另外可以参考[xpoetry]()的构建方式
+
 # 安装
 
 ```shell
@@ -27,7 +29,7 @@ pip install --upgrade build
 # 配置完成后，使用下面命令进行打包
 # 命令执行完成后，会在dist目录下生成whl和tar.gz文件
 # 这两个文件就可以通过 pip install 进行安装了，此时会安装到site-packages下，项目代码就可以像引用其它模块一样进行引用了
-python -m build
+python -m build .
 
 # 查看帮助
 python -m build --help
