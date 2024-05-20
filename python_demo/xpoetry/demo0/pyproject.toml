@@ -1,0 +1,75 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry]
+name = "demo0"
+version = "0.1.0" # 可以设置为 "git"
+description = ""
+authors = ["linlei <linlei@migu.cn>"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+# python = "~2.7 || ^3.2"
+
+# requests = "^2.13"
+# requests = { version = "^1.4", optional = true }
+# requests = ">= 1.2, < 1.5"
+
+scipy = { optional = true, version = "*" }
+pandas = { optional = true, version = "*" }
+
+# torch = "*"
+
+# 一般，比如 python 3.4.5，其中 3表示主版本号，4表示次要版本号，5表示修订版本号
+# python = ">=3.9"
+
+# 下面是几个依赖的对应举例，其中 := 表示 前面的表达式和后面的表达式相等
+# 或者参考: https://python-poetry.org/docs/dependency-specification/#version-constraints
+# ^1.2.3 := >=1.2.3 <2.0.0
+# ^1.2 := >=1.2.0 <2.0.0
+# ^1 := >=1.0.0 <2.0.0
+# ^0.2.3 := >=0.2.3 <0.3.0
+# ^0.0.3 := >=0.0.3 <0.0.4
+# ^0.0 := >=0.0.0 <0.1.0
+# ^0 := >=0.0.0 <1.0.0
+
+# ~1.2.3 := >=1.2.3 <1.3.0
+# ~1.2 := >=1.2.0 <1.3.0
+# ~1 := >=1.0.0 <2.0.0
+
+# * := >=0.0.0
+# 1.* := >=1.0.0 <2.0.0
+# 1.2.* := >=1.2.0 <1.3.0
+
+# >= 1.2.0
+# > 1
+# < 2
+# != 1.2.3
+
+# 还可以使用下面的配置方式处理依赖
+# [tool.poetry.dependencies.requests]
+# version = "^2.31"
+
+
+[tool.poetry.extras]
+# 可以使用 pip install demo0[scipy] 安装附加安装scipy包
+# pip install --no-index --find-links . demo0[all]
+# pip install --no-index --find-links . demo0[pandas]
+# pip install --no-index --find-links . demo0[scipy]
+# pip install --no-index --find-links . demo0   # 则不会安装pandas和scipy
+scipy = ["scipy"]
+pandas = ["pandas"]
+all = ["pandas", "scipy"]
+
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
+pytest-cov = "^2.4"
+
+
+[tool.poetry.scripts]
+my-script = 'my_package:main'

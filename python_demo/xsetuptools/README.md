@@ -4,7 +4,7 @@
 
 虽然本文在setuptools下，但本文不仅限于`setuptools`，本文包含了一般python的打包、分发、构建、测试等，比如包含了`tox`、`mypy`等。
 
-另外可以参考[xpoetry]()的构建方式
+另外可以参考[xpoetry](https://github.com/xmlclone/docode/tree/main/python_demo/xpoetry)的构建方式
 
 # 安装
 
