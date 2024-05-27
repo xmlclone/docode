@@ -22,6 +22,21 @@ docker exec -u 0 -it ubuntu /bin/bash
 docker exec -it ubuntu /bin/bash -c "date"
 ```
 
+# 宿主机扩容
+
+```sh
+systemctl stop docker
+mv /var/lib/docker /var/lib/docker_backup
+# 在需要重新挂载的地方新建目录
+mkdir /new/path/to/docker
+ln -s /new/path/to/docker /var/lib/docker
+# 可以直接启动docker，或把原始的内容先拷贝过去在启动docker
+cp -R /var/lib/docker_backup /var/lib/docker
+systemctl start docker
+
+df -h
+```
+
 # 安装
 
 ## ubuntu
