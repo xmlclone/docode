@@ -24,7 +24,7 @@ class A:
 o = A()
 print(o.m)
 # print(o.n) # 无法使用和定义未在__slots__列出的实例变量
-print(o.z)
+print(o.z)  # 注意，只是无法在实例，即self上定义，类变量z仍然是可以访问的，因为访问的是类A(类也是一个对象)的属性z
 # print(o.__dict__) # *. 定义__slots__后，不会主动创建__dict__，故无法访问
 
 
@@ -34,8 +34,8 @@ class B(A):
 
 o = B()
 # *. 继承类除非显示使用了__slots__，否则会自动创建__dict__，那么也就可以使用未在父类的__slots__定义的变量
-o.n = 12
-print(o.n)
+o.n = 12 # type: ignore
+print(o.n) # type: ignore
 print(o.__dict__)
 
 
@@ -54,6 +54,7 @@ o.m = 14
 
 
 # *. 继承自一个没有__slots__的类，不管内部是否定义了__slots__，都会有__dict__
+# 所以，如果父类没有定义 __slots__ ，子类再去定义则意义不大，需要提前规划好
 class D:
     ...
 
@@ -64,7 +65,7 @@ o = E()
 # 虽然E定义了__slots__，但是它的父类D并没有__slots__，故会自动生成__dict__
 print(o.__dict__)
 o.x = 1
-o.y = 2
+o.y = 2 # type: ignore
 
 # *. 父类E虽然有__slots__，但是往上的D仍然是没有__slots__的，__dict__仍然是可以访问的
 # *. 故第一个父类会影响下面所有的子类

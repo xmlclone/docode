@@ -7,7 +7,8 @@ class A(abc.ABC):
 
     @abc.abstractmethod
     def f2(self):
-        raise NotImplemented
+        # 注意这里需要 raise 的内容，不要写成 NotImplemented 了
+        raise NotImplementedError
     
 
 class B(A):
