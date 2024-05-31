@@ -17,7 +17,7 @@ a = A()
 b = B()
 # type(a)=<class '__main__.A'>, type(b)=<class '__main__.B'>
 print(f"{type(a)=}, {type(b)=}")
-b.b_f() # 部分IDE可能会报错，但是不影响执行
+b.b_f() # 部分IDE可能会报错，但是不影响执行 # type: ignore
 
 
 
