@@ -61,7 +61,7 @@ class Events:
     event4: DeprecatedEventHook
 
 
-    def __init__1(self):
+    def __init__(self):
         # vars 返回的就是对象的 __dict__ 属性， key 是变量名， value 是类型
         # 这里这样做的目的是为了应对上面 event3 的定义方式
         # https://docs.python.org/3/library/functions.html#vars
