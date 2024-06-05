@@ -66,3 +66,7 @@ print(t1)
 t1 = T1Model.model_validate_json('{"users": ["lin", "lai"]}')
 print(t1)
 print('-' * 100)
+
+
+print(User.model_json_schema())
+print(json.dumps(User.model_json_schema(), indent=2))

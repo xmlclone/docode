@@ -9,6 +9,7 @@ from typing import (
     TypeVar,   # 示例代码请参考 generic_demo0.py
     Annotated, # 参考 annotated_demo0.py
     Literal,
+    TypeAlias,
     Sequence as typeSequence
 )
 
@@ -18,7 +19,13 @@ from collections.abc import (
 )
 
 
+# NewType 相当于创建了一个新的类型，更加安全
 UserId = NewType('UserId', int)
+# TypeAlias 仅仅是给后面的类型创建了别名，实质并没有改变
+Vector: TypeAlias = List[float]
+# 其实也就等同于 Vector = List[float]
+# TypeVar 相当于创建泛型而使用的
+File = TypeVar('File', bound=str|bytes)
 
 
 def stub_function1(x: int, y: int) -> int:
@@ -40,6 +47,7 @@ def test_function1(
     union_var: Union[str, int],
     union_var2: Union[int, None],
     literal_var: Literal['r', 'w', 'rb', 'wb'], # 类似于 choices
+    typealias_var: Vector,
     optional_var: Optional[int] = 0,  # 其实等价于上面的 Union[int, None], 当然不包括后面的默认值
 ) -> None:
     ...

@@ -146,6 +146,9 @@ docker run --restart always
 # 自动删除，和-d互斥，开发时使用或临时使用
 docker run --rm xxx
 
+# 注意：如果宿主机环境变量有更新， docker restart 重启容器，并不会重新读取到新的环境变量值
+# 要么进入容器手动修改容器内的环境变量，要么 docker rm 删除容器后重新 docker exec 启动容器
+# docker-compose restart 也类似，可以通过 docker-compose down 后重新 docker-compose up 获取新的环境变量值
 # 传递环境变量
 docker run -e VAR1=1 -e VAR2=2 XXX
 # 传递宿主机的环境变量
@@ -733,6 +736,10 @@ services:
 不管是上面哪种环境变量配置方式，直接使用`stop start`和`restart`均不会生效。也就是宿主机的环境变量变更后，容器内无法使用新的环境变量
 
 ```sh
+# 注意：如果宿主机环境变量有更新， docker restart 重启容器，并不会重新读取到新的环境变量值
+# 要么进入容器手动修改容器内的环境变量，要么 docker rm 删除容器后重新 docker exec 启动容器
+# docker-compose restart 也类似，可以通过 docker-compose down 后重新 docker-compose up 获取新的环境变量值
+
 docker stop nginx
 docker start nginx
 docker restart nginx
