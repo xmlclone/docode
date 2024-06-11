@@ -24,3 +24,7 @@ print(sys.version_info >= (3, 9, 8))
 'PyPy' (Python implementation of Python).
 """
 print(platform.python_implementation())
+
+
+# 定义一个 bool 类型值判断 PY3 PY2
+PY3 = sys.version_info >= (3,)
