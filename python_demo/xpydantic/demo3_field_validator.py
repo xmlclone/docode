@@ -4,7 +4,8 @@
 """
 
 
-from pydantic import BaseModel, field_validator
+from typing import Optional, Self
+from pydantic import BaseModel, field_validator, model_validator
 
 
 class User(BaseModel):
@@ -12,6 +13,7 @@ class User(BaseModel):
     # short_name: str
     # full_name: str
     age: int
+    short_name: Optional[str] = ''
 
     @field_validator('age')
     @classmethod
@@ -19,6 +21,12 @@ class User(BaseModel):
         if age < 0:
             return 0
         return age
+    
+    # 可以修改/设置对象 self 的某些属性
+    @model_validator(mode='after')
+    def convert_2shortname(self) -> Self:
+        self.short_name = self.name
+        return self
     
 
 user1 = User(name='lin', age=-1)

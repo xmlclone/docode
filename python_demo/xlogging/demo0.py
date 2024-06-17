@@ -14,6 +14,7 @@ logging.config.dictConfig({
     'disable_existing_loggers': False,
     'formatters': {
         'console': {
+            # https://docs.python.org/3/library/logging.html#logrecord-attributes
             'format': '%(asctime)s %(levelname)s %(message)s',
         },
         'file': {

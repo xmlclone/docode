@@ -3,7 +3,7 @@
 import re
 import json
 
-from typing import Optional, cast, List
+from typing import Optional, cast, List, Self
 from robot.running.model import TestCase as RunningTestCase
 from robot.running.model import Keyword as RunningKeyword
 from robot.result.model import TestCase as ResultTestCase
@@ -11,21 +11,40 @@ from robot.result.model import Keyword as ResultKeyword
 from robot.result.model import Message as ResultMessage
 from robot.result.visitor import ResultVisitor
 from pydantic.dataclasses import dataclass
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, field_validator, Field, model_validator
+
+
+def convert2shortbody(body: str) -> str:
+    try:
+        result = json.dumps(json.loads(body))
+    except:
+        result = body
+    finally:
+        if len(result) <= 50:
+            return result
+        else:
+            return result[:25] + '...' + result[-25:]
 
 
 class Response(BaseModel):
     url: str
     status: int
-    body: str
+    short_body: Optional[str] = ''
+    long_body: str
 
-    @field_validator('body')
-    @classmethod
-    def body_validator(cls, body: str) -> str:
+    @model_validator(mode='after')
+    def convert2shortbody(self) -> Self:
         try:
-            return json.dumps(json.loads(body))
+            result = json.dumps(json.loads(self.long_body))
         except:
-            return body
+            result = self.long_body
+        finally:
+            if len(result) <= 50:
+                self.short_body = result
+            else:
+                self.short_body = result[:25] + '...' + result[-25:]
+            return self
+        
     
 
 Checked_KW = [
@@ -61,10 +80,13 @@ class demo2_lis:
  status=200, reason=OK
  headers={'Server': 'nginx', 'Date': 'Wed, 05 Jun 2024 03:16:59 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '15', 'Connection': 'keep-alive', 'Vary': 'Access-Control-Request-Headers'}
  body={
-        "code":800
+        "code":800,
+        "test": "adfadfadsfadsfadfadfadfadsfadsf",
+        "fast": "asdfadsfadsfadsfadsfadfas",
+        "host": "adfadsfadsfadsfadsf1234567890"
 }
     """
-        match = re.search(r"url=(?P<url>\S+).*status=(?P<status>\d+).*body=(?P<body>.*)", message, re.S)
+        match = re.search(r"url=(?P<url>\S+).*status=(?P<status>\d+).*body=(?P<long_body>.*)", message, re.S)
         if match:
             self.response.append(Response.model_validate(match.groupdict()))
 
@@ -73,6 +95,7 @@ class demo2_lis:
             message = result.message
             if self.response:
                 for response in self.response:
-                    message = f"{message}, {response.url} response: {response.body}"
+                    # print(response)
+                    message = f"{message}\r\n{response.url} response: {response.short_body}"
                 self.response = list()
             print(message)

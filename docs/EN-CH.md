@@ -1,5 +1,5 @@
 1. compat: 兼容，比如 compat.py 里面可以定义一些 python 或 库 版本相关的判断
-2. deco: 装饰器，比如 deco.py   wrapper
+2. deco(decorator): 装饰器，比如 deco.py   wrapper
 3. expected_status
 4. max_retries
 5. disable_warnings
@@ -13,10 +13,12 @@
 13. events.py
 14. Environment
 15. plugin
+16. Rule Severity
+17. I18N 是指国际化（Internationalization），而 L10N 是指本地化（Localization），都是每个单词的第一个和最后一个字母，中间的数字是每个单词中间字母的数量
 
 
 ```py
 class ResultStatus(Enum):
     Failure = 'Failure'
-    Success = 'Success'
+    Success = 'ss'
 ```
