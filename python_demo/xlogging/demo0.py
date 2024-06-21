@@ -1,14 +1,30 @@
+import logging
 import logging.config
 import os
 
+from flask import Flask, has_request_context, request
+
 
 LOG_PATH = os.getcwd()
+
+
+# 自定义格式化类
+class RequestFormatter(logging.Formatter):
+    def format(self, record):
+        if has_request_context():
+            record.url = request.url
+            record.remote_addr = request.remote_addr
+        else:
+            record.url = None
+            record.remote_addr = None
+        return super().format(record)
 
 
 # 其它地方可以直接通过下面代码使用
 # import logging
 # logger = logging.getLogger(__name__)
 # logger.debug("some debug message")
+
 logging.config.dictConfig({
     'version': 1,
     'disable_existing_loggers': False,
@@ -23,6 +39,11 @@ logging.config.dictConfig({
         'pure': {
             'format': '%(message)s',
         },
+        'req': {
+            # 引用自定义格式化类
+            '()': 'demo0.RequestFormatter', # 注意这个类要指定全路径,就算在本文件定义了,也不能直接使用 RequestFormatter
+            'format': '%(asctime)s %(remote_addr)s %(url)s %(levelname)s %(name)s[%(lineno)d] %(message)s',
+        }
     },
     'handlers': {
         'console': {
