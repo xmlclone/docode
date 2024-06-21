@@ -75,7 +75,10 @@ conda info
 
 # 但在wsl下遇见更新目录名并激活虚拟环境后，执行pip或者其它比如locust会提示找不到python解释器
 # 仔细看日志，发现查找的python解释器路径还是原始的目录名，解决办法如下
-# 暂时未解决，目前使用删除了旧的虚拟环境重新创建
+# (已解决)暂时未解决，目前使用删除了旧的虚拟环境重新创建
+# 先卸载在安装对应的包即可
+python -m pip uninstall XXX
+python -m pip install XXX
 ```
 
 # linux虚拟环境包路径
