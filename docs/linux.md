@@ -109,7 +109,7 @@ sudo firewall-cmd --reload
 
 ## 免密配置
 
-A是需要被免密访问的机器，B是访问者
+A是需要被免密访问的机器，B是访问者(比如需要通过B给A传文件)
 
 B上面通过`ssh-keygen -t rsa -C test@test.com -b 4096`生成公钥，文件`id_rsa.pub`里面内容复制到A的`authorized_keys`文件里面即可。
 

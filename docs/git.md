@@ -124,7 +124,7 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
 
-> `ssh-keygen`可以增加多个账号，在生成配置文件时，会提示文件保存路径，我们可以自定义自己的，比如命名为testxxx
+> `ssh-keygen`可以增加多个账号，在生成配置文件时，会提示文件保存路径，我们可以自定义自己的，比如命名为testxxx(默认是`id_rsa.pub`和`id_rsa`两个文件)
 > 需要在`.ssh`目录下，需要增加一个`config`文件，文件配置如下:
 
 ```
