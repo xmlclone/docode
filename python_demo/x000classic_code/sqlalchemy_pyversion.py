@@ -3,6 +3,8 @@ import platform
 
 
 print(f"{sys.version=}")
+# sys.platform='win32', platform.machine()='AMD64'
+# sys.platform='linux', platform.machine()='x86_64'
 print(f"{sys.platform=}, {platform.machine()=}")
 print(f"{platform.machine()=}")
 # 判断是否是 64 位系统
