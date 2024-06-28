@@ -1,5 +1,7 @@
 [toc]
 
+https://dormousehole.readthedocs.io/en/latest/index.html
+
 # 命令行
 
 ```sh
@@ -35,6 +37,9 @@ from werkzeug.utils import secure_filename
 # url_for('login', next='/')  login?next=/
 # url_for('login', username='John Doe')  login/John%20Doe
 # url_for('static', filename='style.css')
+# url_for 还有一定的额外的参数
+# _external=True, 可以生成全部的 url 地址，否则只有路径
+# 更多可参考 demo5_url_for.py
 from flask import url_for
 
 
@@ -42,6 +47,11 @@ from flask import url_for
 # request.form['username']
 # request.args.get('key', '')   url里面具有 ?key=value的情形
 # request.cookies.get('username')
+# 获取远程访问的对象，可参考 demo2_logger.py 和 demo4_signal.py 记录远程访问信息
+# request.remote_addr
+# request.path
+# request.method
+# request.status_code
 from flask import request
 
 
@@ -111,7 +121,7 @@ from flask import Blueprint
 @app.post('/login')
 
 # 显示添加路由
-app.add_url_rule('/', endpoint='index')
+app.add_url_rule('/', endpoint='index', view_func=xxx_func, methods=['POST', 'GET'])
 ```
 
 

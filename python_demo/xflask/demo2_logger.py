@@ -17,6 +17,7 @@ print(logfile)
 
 
 # 注入请求信息
+# 当然也可以通过 flask 的 signal 获取到请求信息，可参考 demo4_signal.py
 class RequestFormatter(logging.Formatter):
     def format(self, record):
         if has_request_context():
