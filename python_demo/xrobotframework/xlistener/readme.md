@@ -2,6 +2,13 @@
 # https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#listener-interface
 # https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#registering-listeners-from-command-line
 
+# 通常情况，参数可以使用:分开
+robot --listener xxLis:args1:args2 test.robot
+# 如果参数是列表形式，此时建议所有参数都把类型带上，比如 arg1 和列表内容都是字符串的情况下
+robot --listener xxLis:"args1":"['args2']" test.robot
+# 如果某个参数里面包含:，那么可以使用;作为分隔符 args:contain:path 是第一个参数，不是3个参数 args2:contain:path 才是第二个参数
+robot --listener xxLis;args1:contain:path;args2:contain:path
+
 robot --listener MyListener tests.robot
 robot --listener path/to/MyListener.py tests.robot
 robot --listener module.Listener --listener AnotherListener tests.robot

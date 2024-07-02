@@ -7,14 +7,16 @@
 import json
 
 from datetime import datetime
-from typing import Tuple, List
+from typing import Tuple, List, Optional, Union
 
-from pydantic import BaseModel, PositiveInt
+from pydantic import BaseModel, PositiveInt, Field
 
 
 class Delivery(BaseModel):
     timestamp: datetime
     dimensions: Tuple[int, int]
+    # 如果是可选的默认值，需要使用Field配合使用
+    op_val: Optional[int] = Field(default=None)
 
 m = Delivery(timestamp=datetime.now(), dimensions=(10, 20))
 print(f"{m.timestamp=}, {m.dimensions=}")
@@ -25,7 +27,8 @@ class User(BaseModel):
     id: int  
     name: str = 'John Doe'  
     signup_ts: datetime | None  
-    tastes: dict[str, PositiveInt]  
+    tastes: dict[str, PositiveInt]
+    delivery: Union[Delivery, None]
 
 external_data = {
     'id': 123,
@@ -35,6 +38,7 @@ external_data = {
         b'cheese': 7,  # 类似的如果类型和模型定义不一致的，会自动转换为模型的数据类型
         'cabbage': '1',   # 比如这里的 cabbage 在模型定义时是 PositiveInt 类型，这里虽然传递的是字符串，但是会被转换为整型
     },
+    'delivery': m,
 }
 
 user = User(**external_data)

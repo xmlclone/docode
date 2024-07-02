@@ -15,6 +15,8 @@ class User(BaseModel):
     age: int
     short_name: Optional[str] = ''
 
+    # 某些属性可以访问时在确定值
+    # 注意这里需要是 classmethod
     @field_validator('age')
     @classmethod
     def age_must_valid(cls, age: int) -> int:
