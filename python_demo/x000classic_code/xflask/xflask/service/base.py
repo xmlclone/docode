@@ -7,7 +7,8 @@ from sqlalchemy import select
 
 from ..wrap_response import make_response, ResponseStatus
 from ..dao.base import Dao
-from ..exception import AddObjectError, DeleteObjectError
+from ..exception import AddObjectError, DeleteObjectError, UpdateObjectError
+from ..auth import login_required
 
 
 logger = logging.getLogger(__name__)
@@ -22,21 +23,27 @@ class BaseItem(BaseView):
     def get(self, id):
         return make_response(data=self.dao.get(id))
     
+    @login_required
     def delete(self, id):
         if self.dao.delete(id):
             return make_response()
-        else:
-            return make_response(exception=DeleteObjectError(data=id))
+        return make_response(exception=DeleteObjectError(data=id))
+        
+    @login_required
+    def post(self, id):
+        if self.dao.update(id, request.json):
+            return make_response()
+        return make_response(exception=UpdateObjectError(data=id))
 
 
 class BaseGroup(BaseView):
     def get(self):
         return make_response(data=self.dao.get())
 
+    @login_required
     def post(self):
         request_data = request.json
         logger.debug(f"{request_data=}")
         if self.dao.add(request_data):
             return make_response()
-        else:
-            return make_response(exception=AddObjectError(data=request_data))
+        return make_response(exception=AddObjectError(data=request_data))

@@ -14,10 +14,14 @@ class DbBase(db.Model):
    __abstract__ = True
 
 
-class PyBase(BaseModel, extra='forbid'):
+class PyBase(BaseModel, extra='allow'): # https://docs.pydantic.dev/latest/api/config/#pydantic.config.ConfigDict.extra
+    # extra 默认是 ignore
+    # extra 也可以配置在下面的 ConfigDict 里面
     model_config = ConfigDict(
-        from_attributes=True, # https://docs.pydantic.dev/latest/api/config/#pydantic.config.ConfigDict.from_attributes
-        arbitrary_types_allowed=True, # https://docs.pydantic.dev/latest/api/config/#pydantic.config.ConfigDict.arbitrary_types_allowed
+        #  https://docs.pydantic.dev/latest/concepts/models/#arbitrary-class-instances
+        # https://docs.pydantic.dev/latest/api/config/#pydantic.config.ConfigDict.from_attributes
+        from_attributes=True,
+        # arbitrary_types_allowed=True, # https://docs.pydantic.dev/latest/api/config/#pydantic.config.ConfigDict.arbitrary_types_allowed
     )
 
 

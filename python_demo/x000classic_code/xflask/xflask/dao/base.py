@@ -1,8 +1,9 @@
+from email.policy import strict
 import logging
 import sqlalchemy
 
 from typing import Union, Type, Dict, List, overload
-from sqlalchemy import select
+from sqlalchemy import select, update
 
 from ..model import db
 from ..model.base import PyBase, DbBase
@@ -47,7 +48,7 @@ class Dao:
     ):
         if request_data:
             obj = self.py_model.model_validate(request_data)
-            item = self.db_model(**obj.model_dump())
+            item = self.db_model(**obj.model_dump(exclude_none=True))
             db.session.add(item)
             db.session.commit()
             return True
@@ -55,9 +56,27 @@ class Dao:
 
     def delete(self, id):
         item = db.get_or_404(self.db_model, id)
+        logger.debug(f"delete item: {item}")
         db.session.delete(item)
         db.session.commit()
         return True
 
-    def update(self, id):
-        ...
+    def update(self, id, request_data: Union[Dict, None]):
+        item = db.get_or_404(self.db_model, id)
+        logger.debug(f"update item: {item}, update data: {request_data}")
+        obj = self.py_model.model_validate(item)
+        if request_data:
+            # model_copy 更新的数据，没有被转换，比如客户端传递的 date 会被转换为原始的 str ，而不是 date 对象
+            # new_obj = obj.model_copy(update=request_data)
+            # 故需要额外转义一次
+            new_obj = self.py_model.model_validate(obj.model_copy(update=request_data).model_dump())
+            # logger.debug(f"{obj=}, {new_obj=}")
+            # logger.debug(f"{type(new_obj.birthdate)=}, {new_obj.birthdate=}")
+            # logger.debug(f"{type(obj.birthdate)=}, {obj.birthdate=}")
+            for key in request_data:
+                val = getattr(new_obj, key)
+                # logger.debug(f"{key=}, {val=}, {type(val)=}")
+                setattr(item, key, val)
+            db.session.commit()
+            return True
+        return False

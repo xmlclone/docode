@@ -5,7 +5,7 @@ from flask import g, redirect, Flask, request, session
 from werkzeug.exceptions import Forbidden
 
 from .wrap_response import make_response
-from .exception import LoginFailed
+from .exception import LoginFailed, NeedLogin
 
 
 logger = logging.getLogger(__name__)
@@ -18,18 +18,17 @@ def init_app(app: Flask):
 
 
 def load_user():
+    logger.debug('befor_request: load_user.')
     user = session.get('user')
-    if user is None:
-        g.user = None
-    else:
-        g.user = user
-    logger.debug(f"{user=}")
+    g.user = None if user is None else user
+    logger.debug(f"{g.user=}")
 
 
 def login():
-    if not request.json:
+    if (not request.is_json) or (not request.json):
         raise LoginFailed()
     username = request.json.get('username', None)
+    logger.debug(f"{username=}")
     if not username:
         raise LoginFailed()
     session.clear()
@@ -44,8 +43,8 @@ def logout():
 
 def login_required(view):
     @functools.wraps(view)
-    def wrapped_view(**kwargs):
+    def wrapped_view(*args, **kwargs):
         if g.user is None:
-            raise Forbidden()
-        return view(**kwargs)
+            raise NeedLogin()
+        return view(*args, **kwargs)
     return wrapped_view
