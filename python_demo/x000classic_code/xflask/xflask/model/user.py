@@ -6,9 +6,11 @@ from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import String, Column, JSON
 from pydantic import Field, model_validator, field_validator
 from pydantic.dataclasses import dataclass
+from werkzeug.security import generate_password_hash, check_password_hash
 
 from .base import PyBase, DbBase
-from ..type import str_11, str_30, str_60, str_120
+from ..constant import UserRole
+from ..type import str_11, str_30, str_60, str_120, str_240
 
 
 logger = logging.getLogger(__name__)
@@ -26,16 +28,20 @@ class UserDB(DbBase):
         String(60),
         # mapped_column 的 nullable (在 primary_key 为 True 时默认 False, 其它情况默认 True) 优先级高于 Mapped 注解
         # Mapped 注解配合 Optional 表示此字段是否可以为 Null
-        nullable=True
+        nullable=True,
+        unique=True,
     )
+    password: Mapped[str_120] = mapped_column(String(240), nullable=False)
     birthdate: Mapped[date]
     gender: Mapped[Literal['male', 'female']]
     # nullable = True
     phone: Mapped[Optional[str_11]] = mapped_column(String(11))
+    email: Mapped[Optional[str_30]] = mapped_column(String(30))
     address: Mapped[Optional[str_120]] = mapped_column(String(120))
     register_time: Mapped[datetime] = mapped_column(default=datetime.now)
     # JSON格式类型字段
     name_dict = Column('name_dict', JSON, nullable=True)
+    role: Mapped[UserRole] = mapped_column(default=UserRole.user)
 
     def __str__(self) -> str:
         return self.full_name
@@ -66,18 +72,21 @@ class UserPy(PyBase):
     last_name: str_30
     # 虽然设置为 Optional ，但是必须配合 Field 使用，否则在实例化时，此字段仍然会提示是必选的
     full_name: Optional[str_60] = Field(default=None)
+    password: Optional[str_240] = Field(default=None)
     birthdate: date
     gender: Literal['male', 'female']
     phone: Optional[str_11] = Field(default=None)
     address: Optional[str_120] = Field(default=None)
+    email: Optional[str_30] = Field(default=None)
     # 同样，这个字段只能让数据库自行处理，而不是用户传递，使用 exclude=True 后，就算用户传递了也无效，因为不会被导出
     # register_time: Optional[datetime] = Field(exclude=True, default=None)
     register_time: Optional[datetime] = None
     name_dict: Optional[NameDict] = None
+    role: Optional[UserRole] = Field(default=UserRole.user)
 
     @model_validator(mode='after')
     def get_full_name(self) -> Self:
-        self.full_name = f"{self.first_name} {self.last_name}"
+        self.full_name = f"{self.first_name}{self.last_name}"
         self.name_dict = NameDict(self.first_name, self.last_name)
         return self
     
@@ -87,4 +96,8 @@ class UserPy(PyBase):
         if isinstance(value, date):
             return value
         return datetime.strptime(value, "%Y-%m-%d")
+    
+    @field_validator('password')
+    def validator_password(cls, value: str) -> str:
+        return generate_password_hash(value)
 

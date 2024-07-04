@@ -4,29 +4,25 @@ import logging
 from typing import Literal, Union, Optional, Self, Dict, List, Any, cast
 from enum import Enum
 from flask import make_response as flask_make_response
-from pydantic import BaseModel, Field, model_validator, field_validator
+from pydantic import BaseModel, Field, model_validator, field_validator, ConfigDict
 from werkzeug.exceptions import HTTPException
 
 from .model import UserPy
 from .model.base import PyBase
+from .constant import ResponseStatus
 
 
 logger = logging.getLogger(__name__)
 
 
-class ResponseStatus(Enum):
-    success = 0
-    fail = 1
-    unkonwn = 2
-
-
 class ResponsePy(BaseModel):
+    # model_config = ConfigDict(arbitrary_types_allowed=True)
     code: Optional[int] = Field(default=0)
     status: ResponseStatus
     # 默认情况下不能使用父类，否则 dump 出来的数据是空的
     # 但是可以配合 serialize_as_any 和 SerializeAsAny 使用则可以
     # https://docs.pydantic.dev/latest/concepts/serialization/#serializing-with-duck-typing
-    data: Union[List[PyBase], PyBase, str, None, Dict]
+    data: Union[List[PyBase], PyBase, str, None, Dict, List]
 
     @model_validator(mode='after')
     def get_code(self) -> Self:
@@ -46,13 +42,16 @@ class ResponsePy(BaseModel):
 
 
 def make_response(status=ResponseStatus.success, data=None, exception: HTTPException | None=None, exception_message=None):
+    logger.debug('start make response.')
     if exception:
+        logger.debug(f"the exception: {exception}")
         # 如果有异常，应该防止用户传递错误的 status 和 data
         if status == ResponseStatus.success:
             status = ResponseStatus.fail
         data = exception_message or exception.description
+        logger.debug(f"{data=}")
     resp_py = ResponsePy(status=status, data=data)
-    # logger.debug(f"{resp_py=}")
+    logger.debug(f"{resp_py=}")
     # logger.debug(f"{resp_py.data[0].model_dump_json()=}")
     resp = flask_make_response()
     resp.content_type = 'application/json'

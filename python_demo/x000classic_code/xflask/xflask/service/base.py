@@ -5,7 +5,8 @@ from flask import request
 from flask.views import MethodView
 from sqlalchemy import select
 
-from ..wrap_response import make_response, ResponseStatus
+from ..wrap_response import make_response
+from ..constant import ResponseStatus
 from ..dao.base import Dao
 from ..exception import AddObjectError, DeleteObjectError, UpdateObjectError
 from ..auth import login_required
@@ -40,7 +41,7 @@ class BaseGroup(BaseView):
     def get(self):
         return make_response(data=self.dao.get())
 
-    @login_required
+    # @login_required
     def post(self):
         request_data = request.json
         logger.debug(f"{request_data=}")

@@ -14,7 +14,7 @@ class DbBase(db.Model):
    __abstract__ = True
 
 
-class PyBase(BaseModel, extra='allow'): # https://docs.pydantic.dev/latest/api/config/#pydantic.config.ConfigDict.extra
+class PyBase(BaseModel, extra='forbid'): # https://docs.pydantic.dev/latest/api/config/#pydantic.config.ConfigDict.extra
     # extra 默认是 ignore
     # extra 也可以配置在下面的 ConfigDict 里面
     model_config = ConfigDict(

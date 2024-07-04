@@ -6,33 +6,40 @@ from werkzeug.exceptions import Forbidden
 
 from .wrap_response import make_response
 from .exception import LoginFailed, NeedLogin
+from .dao import UserDao
 
 
 logger = logging.getLogger(__name__)
 
 
 def init_app(app: Flask):
-    app.add_url_rule('/login', 'login', login, methods=['POST'])
-    app.add_url_rule('/logout', 'logout', logout, methods=['POST'])
+    app.add_url_rule('/api/login', 'login', login, methods=['POST'])
+    app.add_url_rule('/api/logout', 'logout', logout, methods=['POST'])
     app.before_request(load_user)
 
 
 def load_user():
     logger.debug('befor_request: load_user.')
     user = session.get('user')
-    g.user = None if user is None else user
+    logger.debug(f"{user=}")
+    g.user = None if user is None else UserDao().get(user)
     logger.debug(f"{g.user=}")
 
 
 def login():
     if (not request.is_json) or (not request.json):
-        raise LoginFailed()
+        raise LoginFailed(description='request data is error.')
     username = request.json.get('username', None)
-    logger.debug(f"{username=}")
-    if not username:
-        raise LoginFailed()
+    password = request.json.get('password', None)
+    logger.debug(f"{username=}, {password=}")
+    if not username or not password:
+        raise LoginFailed(description='username or password is none.')
+    user = UserDao().check_username_password(username, password)
+    if not user:
+        raise LoginFailed(description='username or password error.')
     session.clear()
-    session['user'] = username
+    session['user'] = user.id
+    logger.debug(f'login success: {username}')
     return make_response()
 
 

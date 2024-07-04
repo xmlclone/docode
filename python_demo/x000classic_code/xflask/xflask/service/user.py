@@ -5,7 +5,8 @@ from flask import request
 from flask.views import MethodView
 
 from .base import BaseItem, BaseGroup
-from ..wrap_response import make_response, ResponseStatus
+from ..wrap_response import make_response
+from ..constant import ResponseStatus
 from ..dao import UserDao
 from ..exception import AddObjectError
 
