@@ -19,15 +19,7 @@ class UserDao(Dao):
         self.db_model = UserDB
         self.py_model = UserPy
 
-    def check_username_password(self, username: str, password):
-        stmt = select(self.db_model).where(self.db_model.full_name==username)
+    def get_with_full_name(self, full_name):
+        stmt = select(self.db_model).where(self.db_model.full_name==full_name)
         item = db.session.scalars(stmt).first()
-        logger.debug(f'{item=}')
-        if not item:
-            return False
-        if not check_password_hash(item.password, password):
-            return False
         return item
-
-    def update_password(self, id, password):
-        ...

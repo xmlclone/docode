@@ -16,14 +16,12 @@ def register_plugin(app: Flask):
     from .command import init_app as command_init_app
     from .error import init_app as error_init_app
     from .service import init_app as service_init_app
-    from .auth import init_app as auth_init_app
 
     for plugin in [
         model_init_app,
         command_init_app,
         error_init_app,
         service_init_app,
-        auth_init_app,
     ]:
         plugin(app)
 

@@ -54,10 +54,13 @@ class Dao:
             return True
         return False
 
-    def delete(self, id):
+    def delete(self, id, soft=True):
         item = db.get_or_404(self.db_model, id)
         logger.debug(f"delete item: {item}")
-        db.session.delete(item)
+        if not soft:
+            db.session.delete(item)
+        else:
+            setattr(item, 'delete', True)
         db.session.commit()
         return True
 

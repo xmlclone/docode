@@ -20,7 +20,6 @@ class UserDB(DbBase):
     __tablename__ = 'user'
 
     # https://docs.sqlalchemy.org/en/20/orm/mapping_api.html#sqlalchemy.orm.mapped_column
-    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     first_name: Mapped[str_30] = mapped_column(String(30), nullable=False)
     # nullable = False
     last_name: Mapped[str_30] = mapped_column(String(30), nullable=False)
@@ -67,7 +66,6 @@ class UserPy(PyBase):
     # 故这里可以给定默认值，在 model_dump 时指定参数 exclude_none=None 来避免此情况
     # 这样，即可以在 UserPy 转 UserDB 时某些值(比如 id 和 register_time)让 UserDB 自行处理
     # 又可以在导出 UserPy 数据时得到 id 和 register_time 返回给用户
-    id: Optional[int] = None
     first_name: str_30
     last_name: str_30
     # 虽然设置为 Optional ，但是必须配合 Field 使用，否则在实例化时，此字段仍然会提示是必选的
