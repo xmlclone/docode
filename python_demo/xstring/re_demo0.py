@@ -28,6 +28,7 @@ body={
 """
 
 
+# groupdict re.S . 匹配换行
 match = re.search(r"url=(?P<url>\S+).*status=(?P<status>\d+).*body=(?P<body>.*)", message, re.S)
 if match:
     print(match.groupdict())
@@ -69,3 +70,22 @@ match = re.search(r"version is (?P<version>\d\.\d\.\d), .*(?P=version)", message
 if match:
     # 其中 group(1) 和 group('version') 是一致的
     print(f"{match.group(0)=}, {match.group(1)=}, {match.group('version')=}, {match.groupdict()=}")
+
+
+# 贪婪与非贪婪
+message = '"This message contains"you can get it."'
+# 这是贪婪模式，即匹配到最后一个"
+ret = re.search(f'"This message .*"', message)
+print(ret)
+# 这是非贪婪模式，匹配到contains后的"即停止
+ret = re.search(f'"This message .*?"', message)
+print(ret)
+
+# 原始字符串  re.compile
+message = 'This message contains [, you can get it.'
+# 注意这里不管是否有 r, 匹配[, 需要使用\[，建议下面的写法，不要省略r和\
+ret = re.search(r'\[, (.*)', message)
+print(ret)
+re_compile = re.compile(r'\[, (.*)', re.I)
+ret = re_compile.search(message)
+print(ret)

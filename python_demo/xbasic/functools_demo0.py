@@ -7,3 +7,6 @@ import functools
 class Class1:
     def __lt__(self, other: "Class1"):
         ...
+
+
+# functools.wraps 参考 deco_demo0.py
