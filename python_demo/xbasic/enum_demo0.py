@@ -19,3 +19,13 @@ for e in EnumClass0:
 x = EnumClass0("I")
 # x=<EnumClass0.INFO: 'I'>, x.name='INFO', x.value='I'
 print(f"{x=}, {x.name=}, {x.value=}")
+
+
+
+class IntEnumClass0(enum.IntEnum):
+    a = 1
+    b = 2
+
+
+# (IntEnumClass0.a == 1)=True, 2
+print(f"{(IntEnumClass0.a == 1)=}, {int(IntEnumClass0.b)}")

@@ -1,3 +1,13 @@
+# 常用命令
+
+
+```sh
+# 批量删除git tag
+for /f "tokens=* " %i in ('git tag -l') do git tag -d %i
+```
+
+# 批量更新git仓库
+
 ```bat
 REM 示例代码的基本功能是遍历当前目录下所有子目录并使用 git pull 更新代码
 REM 关闭命令的显示，即下发的命令本身不会显示出来，只有回显会显示出来
