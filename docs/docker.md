@@ -91,7 +91,7 @@ rm -rf /var/lib/docker
 
 # 镜像源修改
 
-创建或修改 /etc/docker/daemon.json 文件，修改为如下形式
+创建或修改`/etc/docker/daemon.json`文件，修改为如下形式
 
 ```json
 {
