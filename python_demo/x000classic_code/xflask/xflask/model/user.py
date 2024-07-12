@@ -1,12 +1,12 @@
 import logging
 
-from typing import Optional, Literal, Annotated, Self, Union
+from typing import Optional, Literal, Self, Union
 from datetime import date, datetime
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import String, Column, JSON
 from pydantic import Field, model_validator, field_validator
 from pydantic.dataclasses import dataclass
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash
 
 from .base import PyBase, DbBase
 from ..constant import UserRole
@@ -14,38 +14,6 @@ from ..type import str_11, str_30, str_60, str_120, str_240
 
 
 logger = logging.getLogger(__name__)
-
-
-class UserDB(DbBase):
-    __tablename__ = 'user'
-
-    # https://docs.sqlalchemy.org/en/20/orm/mapping_api.html#sqlalchemy.orm.mapped_column
-    first_name: Mapped[str_30] = mapped_column(String(30), nullable=False)
-    # nullable = False
-    last_name: Mapped[str_30] = mapped_column(String(30), nullable=False)
-    full_name: Mapped[str_60] = mapped_column(
-        String(60),
-        # mapped_column 的 nullable (在 primary_key 为 True 时默认 False, 其它情况默认 True) 优先级高于 Mapped 注解
-        # Mapped 注解配合 Optional 表示此字段是否可以为 Null
-        nullable=True,
-        unique=True,
-    )
-    password: Mapped[str_120] = mapped_column(String(240), nullable=False)
-    birthdate: Mapped[date]
-    gender: Mapped[Literal['male', 'female']]
-    # nullable = True
-    phone: Mapped[Optional[str_11]] = mapped_column(String(11))
-    email: Mapped[Optional[str_30]] = mapped_column(String(30))
-    address: Mapped[Optional[str_120]] = mapped_column(String(120))
-    register_time: Mapped[datetime] = mapped_column(default=datetime.now)
-    # JSON格式类型字段
-    name_dict = Column('name_dict', JSON, nullable=True)
-    role: Mapped[UserRole] = mapped_column(default=UserRole.user)
-
-    def __str__(self) -> str:
-        return self.full_name
-    
-    __repr__ = __str__
 
 
 @dataclass
@@ -98,4 +66,36 @@ class UserPy(PyBase):
     @field_validator('password')
     def validator_password(cls, value: str) -> str:
         return generate_password_hash(value)
+
+
+class UserDB(DbBase):
+    __tablename__ = 'user'
+
+    # https://docs.sqlalchemy.org/en/20/orm/mapping_api.html#sqlalchemy.orm.mapped_column
+    first_name: Mapped[str_30] = mapped_column(String(30), nullable=False)
+    # nullable = False
+    last_name: Mapped[str_30] = mapped_column(String(30), nullable=False)
+    full_name: Mapped[str_60] = mapped_column(
+        String(60),
+        # mapped_column 的 nullable (在 primary_key 为 True 时默认 False, 其它情况默认 True) 优先级高于 Mapped 注解
+        # Mapped 注解配合 Optional 表示此字段是否可以为 Null
+        nullable=True,
+        unique=True,
+    )
+    password: Mapped[str_120] = mapped_column(String(240), nullable=False)
+    birthdate: Mapped[date]
+    gender: Mapped[Literal['male', 'female']]
+    # nullable = True
+    phone: Mapped[Optional[str_11]] = mapped_column(String(11))
+    email: Mapped[Optional[str_30]] = mapped_column(String(30))
+    address: Mapped[Optional[str_120]] = mapped_column(String(120))
+    register_time: Mapped[datetime] = mapped_column(default=datetime.now)
+    # JSON格式类型字段
+    name_dict = Column('name_dict', JSON, nullable=True)
+    role: Mapped[UserRole] = mapped_column(default=UserRole.user)
+
+    def __str__(self) -> str:
+        return self.full_name
+    
+    __repr__ = __str__
 

@@ -1,11 +1,9 @@
 import functools
 import logging
 
-from flask import g, redirect, Flask, request, session
-from werkzeug.exceptions import Forbidden
+from flask import g, session
 
-from ..wrap_response import make_response
-from ..exception import LoginFailed, NeedLogin
+from ..exception import NeedLogin
 from ..dao import UserDao
 from ..model import UserPy
 from ..constant import UserRole
@@ -36,7 +34,7 @@ def login_required(view):
     return wrapped_view
 
 
-def is_admin(user: UserPy):
+def _is_admin(user: UserPy):
     if not user:
         return False
     if user.role == UserRole.admin:
@@ -44,6 +42,6 @@ def is_admin(user: UserPy):
     return False
 
 
-def login_user_is_admin():
+def is_admin():
     user: UserPy = g.user
-    return is_admin(user)
+    return _is_admin(user)

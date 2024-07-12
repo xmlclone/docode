@@ -1,14 +1,10 @@
-import functools
 import logging
 
-from flask import g, redirect, Flask, request, session
-from werkzeug.exceptions import Forbidden
+from flask import request, session
 
 from ..wrap_response import make_response
-from ..exception import LoginFailed, NeedLogin
-from ..dao import UserDao
-from ..model import UserPy
-from ..constant import UserRole
+from ..exception import LoginFailed
+from ..service import UserService
 
 
 logger = logging.getLogger(__name__)
@@ -22,7 +18,7 @@ def login():
     logger.debug(f"{username=}, {password=}")
     if not username or not password:
         raise LoginFailed(description='username or password is none.')
-    user = UserDao().check_username_password(username, password)
+    user = UserService().check_username_password(username, password)
     if not user:
         raise LoginFailed(description='username or password error.')
     session.clear()

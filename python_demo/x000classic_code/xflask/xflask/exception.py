@@ -31,6 +31,11 @@ class UpdateObjectError(HTTPException):
         self.description = f' Update {data} failed.'
 
 
+class RequestDataFormatError(HTTPException):
+    code = 804
+    description = 'request data format error.'
+
+
 class LoginFailed(HTTPException):
     code = 851
     description = "Login failed."
