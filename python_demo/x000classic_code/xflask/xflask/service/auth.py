@@ -3,9 +3,8 @@ import logging
 
 from flask import g, session
 
-from ..exception import NeedLogin
+from ..exception import NeedLogin, AdminRequired
 from ..dao import UserDao
-from ..model import UserPy
 from ..constant import UserRole
 
 
@@ -27,21 +26,29 @@ def load_user():
 
 def login_required(view):
     @functools.wraps(view)
-    def wrapped_view(*args, **kwargs):
-        if g.user is None:
+    def wrap(*args, **kwargs):
+        if not is_logged():
             raise NeedLogin()
         return view(*args, **kwargs)
-    return wrapped_view
+    return wrap
 
 
-def _is_admin(user: UserPy):
-    if not user:
-        return False
-    if user.role == UserRole.admin:
-        return True
-    return False
+def admin_required(view):
+    @functools.wraps(view)
+    def wrap(*args, **kwargs):
+        if not is_logged():
+            raise NeedLogin()
+        if not is_admin():
+            raise AdminRequired()
+        return view(*args, **kwargs)
+    return wrap
+
+
+def is_logged():
+    logger.debug(f"{g.user=}")
+    return False if g.user is None else True
 
 
 def is_admin():
-    user: UserPy = g.user
-    return _is_admin(user)
+    logger.debug(f"{g.user=}, {g.user.role=}")
+    return True if is_logged() and (g.user.role == UserRole.admin) else False

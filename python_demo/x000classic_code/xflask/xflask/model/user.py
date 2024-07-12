@@ -95,7 +95,7 @@ class UserDB(DbBase):
     role: Mapped[UserRole] = mapped_column(default=UserRole.user)
 
     def __str__(self) -> str:
-        return self.full_name
+        return f"{self.full_name}({self.role}-{self.deleted})"
     
     __repr__ = __str__
 

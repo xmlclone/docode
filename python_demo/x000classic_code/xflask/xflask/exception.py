@@ -44,3 +44,8 @@ class LoginFailed(HTTPException):
 class NeedLogin(HTTPException):
     code = 852
     description = "Need login first."
+
+
+class AdminRequired(HTTPException):
+    code = 853
+    description = "Admin required."

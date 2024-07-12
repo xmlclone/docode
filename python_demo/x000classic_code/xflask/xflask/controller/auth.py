@@ -19,8 +19,9 @@ def login():
     if not username or not password:
         raise LoginFailed(description='username or password is none.')
     user = UserService().check_username_password(username, password)
+    logger.debug(f"{user=}")
     if not user:
-        raise LoginFailed(description='username or password error.')
+        raise LoginFailed(description='username or password error, or user is disabled.')
     session.clear()
     session['user'] = user.id
     logger.debug(f'login success: {username}')

@@ -16,7 +16,8 @@ class UserService(Service):
         self.pymodel = UserPy
 
     def check_username_password(self, username: str, password):
-        item = self.dao.get_with_full_name(username)
+        item = self.dao.get_with_full_name(username, False)
+        logger.debug(f"{item=}")
         if not item:
             return False
         if not check_password_hash(item.password, password):

@@ -79,13 +79,25 @@ with sync_playwright() as playwright:
 
 
     # ==================================================录屏==================================================
-    context = browser.new_context(record_video_dir='videos/')
-    with browser.new_context(record_video_dir='videos/') as context:
-        _page = context.new_page()
-        _page.goto(url)
-        _page.wait_for_timeout(2000)
-        _page.locator('id=demo0').fill('abcdef')
-        _page.wait_for_timeout(2000)
+    # context = browser.new_context(record_video_dir='videos/')
+    # with browser.new_context(record_video_dir='videos/') as context:
+    #     _page = context.new_page()
+    #     _page.goto(url)
+    #     _page.wait_for_timeout(2000)
+    #     _page.locator('id=demo0').fill('abcdef')
+    #     _page.wait_for_timeout(2000)
+
+
+    # ==================================================trace==================================================
+    # with browser.new_context(record_video_dir='videos/') as context:
+    #     context.tracing.start(screenshots=True, snapshots=True, sources=True)
+    #     _page = context.new_page()
+    #     _page.goto(url)
+    #     _page.wait_for_timeout(2000)
+    #     _page.locator('id=demo0').fill('abcdef')
+    #     _page.wait_for_timeout(2000)
+    #     context.tracing.stop(path = "trace.zip")
+        # 最后使用 playwright show-trace trace.zip 命令打开
 
 
     # ==================================================全局超时==================================================

@@ -33,7 +33,7 @@ def config_logger():
             },
             'file': {
                 '()': 'xflask.log.RequestFormatter', # 注意这个类要指定全路径,就算在本文件定义了,也不能直接使用 RequestFormatter
-                'format': '%(asctime)s %(remote_addr)s %(url)s %(levelname)s %(name)s[%(lineno)d] %(message)s',
+                'format': '%(asctime)s %(remote_addr)s %(url)s %(levelname)s %(name)s.%(funcName)s[%(lineno)d] %(message)s',
             },
             'pure': {
                 'format': '%(asctime)s %(levelname)s %(name)s[%(lineno)d] %(message)s',
