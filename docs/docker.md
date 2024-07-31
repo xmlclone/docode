@@ -15,7 +15,7 @@ docker run --rm -it ubuntu /bin/bash
 # 进入容器
 docker exec -it ubuntu /bin/bash
 
-# root用户进入容器
+# root用户进入容器(管理员权限)
 docker exec -u 0 -it ubuntu /bin/bash
 
 # 直接查看命令，比如想查看时间的date命令
