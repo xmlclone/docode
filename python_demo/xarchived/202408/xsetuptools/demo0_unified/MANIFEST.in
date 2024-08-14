@@ -1,0 +1,2 @@
+include xmltest/sec/api.pyc
+exclude xmltest/sec/api.py

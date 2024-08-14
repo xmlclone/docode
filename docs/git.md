@@ -67,6 +67,9 @@ git reset --mixed 是默认行为
 git branch # 只查看本地的
 git branch -a # 本地和远程
 
+# 本地有分支，需要拉取仓库分支(比如远程仓库的dev分支)
+git checkout -b dev origin/dev
+
 # 创建分支(改动的代码不会恢复，即新分支仍然是改动后的代码，不用担心创建新分支后代码丢失)
 git checkout -b new_branch
 
