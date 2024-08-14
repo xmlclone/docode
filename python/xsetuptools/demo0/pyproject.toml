@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "xmltest"
+dependencies = [
+    "requests>=2.31.0",
+]
+dynamic = ["version"]
+description = "xmltest."
+requires-python = ">=2.7, <=3.9"
+authors = [
+    {name = "xmlclone", email = "xmlclone@gmail.com"},
+]
+
+
+[tool.setuptools]
+include-package-data = true
+
+
+[tool.setuptools_scm]
+version_file = "xmltest/_version.py"
+local_scheme = "no-local-version"
+
+
+[project.scripts]
+xmltest = "xmltest.__main__:main"
