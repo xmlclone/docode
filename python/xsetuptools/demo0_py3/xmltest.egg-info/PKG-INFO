@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: xmltest
-Version: 1.0.0
-Requires-Dist: requests>=2.31.0
-Requires-Dist: selenium
-Requires-Dist: robotframework~=5.1
-Requires-Dist: schedule<2.0,>1.0
