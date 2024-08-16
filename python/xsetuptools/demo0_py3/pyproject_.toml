@@ -1,0 +1,47 @@
+[build-system]
+# requires = ["setuptools", "wheel", "setuptools_scm"]  wheel 不是必须的，并且不建议在写入
+requires = ["setuptools", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "xmltest"
+version = '1.0.0'  # 可以使用 setuptools_scm 配合 git 完成版本自动生成
+# dynamic = ["version"]  # 使用 setuptools_scm 自动跟踪版本号开启，和 version 配置不能共存
+dependencies = [
+    "requests>=2.31.0",
+    "selenium",
+    "robotframework~=5.1", # 可以是 5.1 或之后的版本，但不能是 5.0 及之前，也不能是 6.0 及之后的版本
+    "schedule>1.0,<2.0", # 区间范围
+]
+description = "xmltest."
+requires-python = ">=2.7, <=3.9"
+authors = [
+    {name = "xmlclone", email = "xmlclone@gmail.com"},
+]
+
+
+# [tool.setuptools.packages]
+# find = {}
+
+
+[tool.setuptools.packages.find]
+where = ["."]  # ["."] by default
+include = ["xmltest"]  # ["*"] by default，如果指定为 *，会把where目录下(当前目录下)所有包含py文件的文件夹打包
+exclude = []  # empty by default
+namespaces = true  # true by default
+
+
+
+# [tool.setuptools]
+# packages = ["xmltest"]  # 对应 [tool.setuptools.packages.find] 下 where
+# include-package-data = true   # ture by default，需要结合 MANIFEST.in 文件使用
+
+
+[tool.setuptools_scm]
+version_file = "xmltest/_version.py"
+local_scheme = "no-local-version"
+
+
+[project.scripts]
+xmltest = "xmltest.__main__:main"

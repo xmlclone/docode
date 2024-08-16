@@ -1,0 +1,2 @@
+[console_scripts]
+xmltest = xmltest.__main__:main
