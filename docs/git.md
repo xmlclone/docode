@@ -9,7 +9,11 @@ git push origin master:master (本地分支名:远程分支名)
 git push origin dev:dev
 
 # 本地已有main分支，需要拉取远程dev分支
-git pull
+git pull   # 一定先pull
 git checkout -b dev origin/dev
+
 git branch -d dev
+
+git stash
+git stash pop
 ```
