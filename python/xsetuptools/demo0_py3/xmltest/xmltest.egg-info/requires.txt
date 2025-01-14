@@ -1,4 +1,0 @@
-requests>=2.31.0
-selenium
-robotframework~=5.1
-schedule<2.0,>1.0
