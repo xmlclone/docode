@@ -57,3 +57,12 @@ docker run --name zk1 --privileged --network zknet --ip 172.18.0.2
 ```
 
 配置完成后需要重启docker，可以通过`docker info`查看是否生效
+
+# docker-compose
+
+```sh
+docker-compose up
+docker-compose up -d
+
+docker-compose down
+```
