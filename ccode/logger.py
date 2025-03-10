@@ -9,6 +9,7 @@ from flask import has_request_context, request
 
 # cwd 获取的是当前工作区，避免日志存储到 lib 目录下
 LOG_PATH = Path().cwd() / 'logs'
+# 当然也可以使用下面的方法
 # LOG_PATH = os.path.join(os.getcwd(), 'logs')
 if not LOG_PATH.exists():
     os.makedirs(LOG_PATH, exist_ok=True)
@@ -24,13 +25,12 @@ class SelfDefFormatter(logging.Formatter):
         else:
             record.url = None
             record.remote_addr = None
-
+        result = super().format(record)
         # 把多行的数据打印到一行
         # 比如：如果有异常，异常数据打印出来会很难看，可以自定义处理一次
-        s = super().format(record)
-        s = s.replace('\n', '|') 
+        result = result.replace('\n', '|') 
         # if record.exc_text:
-        return s
+        return result
     
 
 def config_logging(
@@ -54,7 +54,7 @@ def config_logging(
             },
             'selfreq': {
                 # 引用自定义格式化类
-                # 注意这个类要指定全路径,就算在本文件定义了,也不能直接使用 RequestFormatter
+                # 注意这个类要指定全路径,就算在本文件定义了,也不能直接使用 SelfDefFormatter
                 '()': 'logger.SelfDefFormatter',
                 'format': '%(asctime)s %(remote_addr)s %(url)s %(levelname)s %(name)s[%(lineno)d] %(message)s',
             },
