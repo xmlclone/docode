@@ -53,7 +53,8 @@ docker run --name zk1 --privileged --network zknet --ip 172.18.0.2
         "https://docker.m.daocloud.io",
         "https://docker.1ms.run",
         "https://docker.ketches.cn"
-    ]
+    ],
+    "insecure-registries": ["192.168.1.100:5000"]
 }
 ```
 

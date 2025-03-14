@@ -1,8 +1,16 @@
 # https://docs.python.org/3/library/string.html#formatstrings
+# https://docs.python.org/zh-cn/3/library/string.html#format-specification-mini-language
+# f-format: https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#f-strings  3.6增加
+# 与 % 比较: https://docs.python.org/zh-cn/3/library/string.html#format-examples
+# % 格式: https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting
 
 
-# 基本格式顺序总结： 变量名[!sra]:*[<>^][N N.N]f%    变量名[!格式(有rsa)]:[填充(默认空白)][对齐(<>^)][长度(N N.N)][格式(f%)]
+# 其中 s表示str(), r表示repr(), a表示ascii()
+# 基本格式顺序总结： [变量名][!sra]:*[<>^][N N.N]f%    [变量名][!格式(有rsa)]:[填充(默认空白)][对齐(<>^)][长度(N N.N)][格式(f%)]
 # 简单记忆为 "变革:田队长"
+
+
+"{!s:*^10}".format("a")
 
 
 # *****左对齐*****，中间默认补齐空白

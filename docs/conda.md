@@ -18,6 +18,11 @@ python -m pip install -U pip
 # 如果最后不指定conda base为基础shell，需要自己增加conda的路径到环境变量PATH下，一般修改~/.bashrc 修改 export PATH=$PATH:path/to/conda 后使用source ~/.bashrc生效，并且使用conda init后重新打开shell，才能使用conda activate xxx
 # 如果指定了，只需要重进shell即可看见base环境
 conda config --set auto_activate_base false
+
+conda config --show
+
+# 修改虚拟环境默认存储位置
+conda config --prepend envs_dirs /new/path/for/envs
 ```
 
 # 修改conda源
