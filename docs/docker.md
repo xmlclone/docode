@@ -21,9 +21,12 @@ docker images
 docker ps
 docker ps -a
 
+# 重启包含nginx名称的容器
 docker ps | grep nginx | awk '{print $13}' | xargs docker restart
-docker ps | grep nginx | awk '{print $13}' | xargs docker restart
+# 删除已经退出（Exited）的容器
 docker ps -a | grep Exited | awk '{print $1}' | xargs docker rm
+# 删除为none的镜像
+docker images | grep none | awk '{print $3}' | xargs docker rmi
 
 docker network create --driver bridge --subnet=172.18.0.0/16 --gateway=172.18.0.1 zknet
 docker network ls

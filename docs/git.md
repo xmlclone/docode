@@ -27,8 +27,8 @@ git config --global -l
 git config --local -l
 
 # 配置代理(全局配置，如果只想对当前git仓库生效，可以不用--global选项)
-git config --global http.proxy "127.0.0.1:7790"
-git config --global https.proxy "127.0.0.1:7790"
+git config --global http.proxy "127.0.0.1:7890"
+git config --global https.proxy "127.0.0.1:7890"
 # 取消代理配置
 git config --global --unset http.proxy
 git config --global --unset https.proxy

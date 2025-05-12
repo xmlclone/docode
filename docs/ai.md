@@ -24,6 +24,12 @@ MLX: mac上优先推荐使用，MLX-lm 用来在苹果 silicon 芯片上提供�
 
 # 平台
 
+## dify
+
+## ragflow
+
+https://ragflow.io/docs/dev/
+
 ## xinference
 
 https://inference.readthedocs.io/zh-cn/latest/getting_started/using_xinference.html
@@ -64,6 +70,12 @@ OLLAMA_MODELS
 
 # 如果通过 docker 启动的, ollama 服务一般配置为如下url：
 http://host.docker.internal:11434
+
+# 导出配置，修改里面 FROM 指令对应的路径，可以指定为gguf文件路径
+ollama show --modelfile qwq > Modelfile
+# 比如gguf文件下载： https://www.modelscope.cn/models/modelscope/Qwen2.5-7B-Instruct-1M-GGUF/files
+# 自定义模型
+ollama create Qwen2.5-7B-Instruct-1M-FP16 -f Modelfile
 ```
 
 - [ollama](https://ollama.com/search)
@@ -81,7 +93,7 @@ nvidia-smi -l 3
 
 ```sh
 # 稳定版看stable，其它可以看preview
-https://pytorch.org/get-started/locally/s
+https://pytorch.org/get-started/locally/
 ```
 
 ```python

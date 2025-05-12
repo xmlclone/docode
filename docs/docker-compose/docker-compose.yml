@@ -1,5 +1,9 @@
 # docker-compose up -d
 # docker-compose down
+# docker compose up 启动时，如果没有在yaml文件中指定 container_name，系统会默认生成 projectname-service-1 这样的容器名称
+# 其中projectname一般就是项目名，如果需要修改，可以使用 -p 参数
+# docker-compose -p new_prj_name up -d
+# 对应的在执行其它命令，比如down时，也需要指定此参数，比如： docker compose -p new_prj_name down
 
 # 可以直接引用已经定义好的yml文件，配置均相同，直接引入即可
 include:
