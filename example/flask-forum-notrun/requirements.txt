@@ -1,0 +1,7 @@
+flask-sqlalchemy
+flask-login
+psycopg2-binary
+python-dotenv
+flask_migrate
+flask_wtf
+Flask

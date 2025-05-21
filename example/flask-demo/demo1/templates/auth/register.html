@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}login{% endblock %}
+{% block content %}
+<form id="form-container" action={{url_for("auth.register")}} method="post">
+    {{ form.csrf_token }}
+    {% if form.username.errors %}
+        {% for error in form.username.errors %}
+            <p id="flash_message" style="color: red">{{ error }}</p>
+        {% endfor %}
+    {% endif %}
+    <h2>注册</h2>
+    <div class="form-group">
+        {{ form.username.label }}
+        {{ form.username }}
+        <!-- <label for="username">用户名:</label>
+        <input type="text" id="username" name="username" required> -->
+    </div>
+    <div class="form-group">
+        <!-- <label for="password">密码:</label>
+        <input type="password" id="password" name="password" required> -->
+        {{ form.password.label }}
+        {{ form.password }}
+    </div>
+    <!-- <button type="submit">注册</button> -->
+     {{ form.submit }}
+</form>
+{% endblock %}

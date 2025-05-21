@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<article class="card shadow-sm mb-4">
+    <div class="card-body">
+        <h1 class="card-title mb-3">{{ post.title }}</h1>
+        <div class="text-muted mb-4">
+            <small>作者：{{ post.author.username }}</small>
+            <small class="ms-3">{{ post.timestamp.strftime('%Y-%m-%d %H:%M') }}</small>
+        </div>
+        <p class="card-text">{{ post.content }}</p>
+    </div>
+</article>
+
+<section class="mb-4">
+    <h4 class="mb-3">回复（{{ post.replies|length }}）</h4>
+    
+    <form method="POST" action="{{ url_for('forum.create_reply', post_id=post.id) }}" class="mb-4">
+        <div class="mb-3">
+            <textarea class="form-control" name="content" rows="3" 
+                      placeholder="请输入回复内容" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">提交回复</button>
+    </form>
+
+    <div class="list-group">
+        {% for reply in post.replies %}
+        <div class="list-group-item mb-2">
+            <div class="d-flex justify-content-between align-items-start">
+                <div class="ms-2 w-100">
+                    <p class="mb-1">{{ reply.content }}</p>
+                    <div class="d-flex justify-content-between">
+                        <small class="text-muted">作者：{{ reply.author.username }}</small>
+                        <small class="text-muted">{{ reply.timestamp.strftime('%Y-%m-%d %H:%M') }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "flask-demo1"
+dependencies = [
+    "flask>=3.0.0",
+    "flask_sqlalchemy>=3.1.1",
+    # "requests>=2.31.0",
+    # "waitress>=3.0.0",
+    # "pydantic>=2.7.0",
+]
+dynamic = ["version"]
+description = "flask demo."
+requires-python = ">=3.8"
+authors = [
+    {name = "linlei", email = "linleinba@yeah.net"},
+]
+
+
+# [tool.setuptools]
+# include-package-data = true
+
+
+# [tool.setuptools.packages.find]
+# include = ["xctools*"]
+# namespaces = false
+
+
+[tool.setuptools_scm]
+version_file = "app/_version.py"
+local_scheme = "no-local-version"
+
+
+# [project.scripts]
+# mgserver = "xctools.__main__:main"

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}发表新帖 - 技术论坛{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h3 class="mb-4"><i class="fas fa-pencil-alt"></i> 发表新帖子</h3>
+            
+            <form method="POST" action="{{ url_for('post.create_post') }}">
+                {{ form.hidden_tag() }}
+                
+                <!-- 标题输入 -->
+                <div class="form-group">
+                    {{ form.title.label(class="form-label") }}
+                    {{ form.title(class="form-control" + (' is-invalid' if form.title.errors else '')) }}
+                    {% for error in form.title.errors %}
+                        <div class="invalid-feedback">{{ error }}</div>
+                    {% endfor %}
+                </div>
+
+                <!-- 分类选择 -->
+                <div class="form-group mt-3">
+                    {{ form.category_id.label(class="form-label") }}
+                    <select class="form-select" name="category_id" id="category_id">
+                        {% for category in categories %}
+                            <option value="{{ category.id }}" 
+                                {% if form.category_id.data == category.id %}selected{% endif %}>
+                                {{ category.name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- 富文本编辑器 -->
+                <div class="form-group mt-3">
+                    {{ form.content.label(class="form-label") }}
+                    {{ form.content(class="form-control", id="editor", rows="12") }}
+                    {% for error in form.content.errors %}
+                        <div class="text-danger small">{{ error }}</div>
+                    {% endfor %}
+                    <small class="form-text text-muted">
+                        支持Markdown语法，代码块请使用三个反引号包裹
+                    </small>
+                </div>
+
+                <!-- 提交按钮 -->
+                <div class="form-group mt-4">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> 发布帖子
+                    </button>
+                    <a href="{{ url_for('post.index') }}" class="btn btn-secondary ms-2">
+                        <i class="fas fa-times"></i> 取消返回
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script>
+    // 初始化Markdown编辑器
+    const simplemde = new SimpleMDE({
+        element: document.getElementById("editor"),
+        spellChecker: false,
+        autosave: {
+            enabled: true,
+            uniqueId: "forum-post-editor",
+            delay: 1000
+        },
+        toolbar: [
+            "bold", "italic", "heading", "|",
+            "code", "quote", "unordered-list", "ordered-list", "|",
+            "link", "image", "table", "|",
+            "preview", "side-by-side", "fullscreen", "|",
+            "guide"
+        ]
+    });
+
+    // 表单提交前处理Markdown内容
+    document.querySelector('form').addEventListener('submit', function() {
+        document.getElementById('editor').value = simplemde.value();
+    });
+</script>
+{% endblock %}
