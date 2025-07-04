@@ -1,25 +1,19 @@
-# 基本命令
+# 本地开发模式
 
 ```sh
+# 安装依赖
+pip install requirements.txt
+# 初次安装，先初始化数据库
+flask --app demo1 init-db
 # 查看帮助
-# 如果app在文件app.py或wsgi.py里面，则不需要--app
 flask --app demo1 --help
-
 # 以debug模式运行，端口号默认是5000，访问: http://127.0.0.1:5000
 flask --app demo1 run --debug
-
 # 为creat_app传递参数
 flask --app "demo1:create_app('prod')" run --debug
+
+# export FLASK_ENV=production && flask run
 ```
-
-# demo分类
-
-- demo1: 基础能力
-- demo2: Bootstrap ElementUI
-- 数据库分页
-- restfulapi
-- 前端技术
-- 线上部署
 
 # 数据库操作
 
