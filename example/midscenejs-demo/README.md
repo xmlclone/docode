@@ -1,3 +1,20 @@
+# 常用命令
+
+```sh
+set PUPPETEER_SKIP_DOWNLOAD=true
+npm i -g @midscene/cli
+
+npm init playwright@latest
+npm install @midscene/web --save-dev
+
+set OPENAI_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
+set OPENAI_API_KEY=......
+set MIDSCENE_MODEL_NAME=qwen-vl-max-latest
+set MIDSCENE_USE_QWEN_VL=1
+
+npx playwright test
+```
+
 # 安装与使用
 
 ```sh
@@ -8,7 +25,7 @@ npm i -g @midscene/cli
 set PUPPETEER_SKIP_DOWNLOAD=true
 ```
 
-## playwright集成
+# playwright集成
 
 ```sh
 # playwright初始化，进入对应的工程目录，如playwright-demo1后执行以下命令：
