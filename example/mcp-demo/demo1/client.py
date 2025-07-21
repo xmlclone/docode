@@ -1,0 +1,1 @@
+# 测试时，建议直接用`mcp dev`的Inspector即可
