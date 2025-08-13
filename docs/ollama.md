@@ -14,6 +14,12 @@ ollama list
 # 常用配置
 
 ```sh
+# ollama服务地址，配置的模型名称，使用 ollama pull 时的名称即可，注意带上 tag（ latest 不用）
+http://localhost:11434
+http://127.0.0.1:11434
+# 有一方通过 docker 启动，另外一方非 docker 启动的情况下，URL 配置如下：
+http://host.docker.internal:11434
+
 # 可以通过配置下面的环境变量，设定 ollama 下载模型的路径
 OLLAMA_MODELS
 ```
