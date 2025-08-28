@@ -18,11 +18,11 @@ docker save -o xxx.tar imageName
 docker save -o xxx.tar imageName:tag
 docker load < xxx.tar
 docker load -i xxx.tar
-
+docker tag old_img:ver new_img:ver
 docker images
+
 docker ps
 docker ps -a
-
 # 重启包含nginx名称的容器
 docker ps | grep nginx | awk '{print $13}' | xargs docker restart
 # 删除已经退出（Exited）的容器

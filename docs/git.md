@@ -32,4 +32,10 @@ git config --global https.proxy "127.0.0.1:7890"
 # 取消代理配置
 git config --global --unset http.proxy
 git config --global --unset https.proxy
+
+
+# git add 后发现操作失误，需要恢复
+git reset  # 恢复到git add 之前，并且不会影响已经改动的文件
+git reset -- README.md  # 只会对README.md取消 git add 操作，不会影响README.nd内容
+git reset --hard  # ！危险，会把更改的文件恢复到之前的版本，如果是新增的文件会被删除
 ```

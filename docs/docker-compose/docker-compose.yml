@@ -5,6 +5,13 @@
 # docker-compose -p new_prj_name up -d
 # 对应的在执行其它命令，比如down时，也需要指定此参数，比如： docker compose -p new_prj_name down
 
+# 可以在服务下面增加以下配置，默认情况下不会被启动，如果要启动，需要通过docker compose 命令行增加 --profiles certbot
+# 且这个配置可以在多个服务下配置相同的名称，命令行就可以批量启动相关的服务 
+# profiles:
+#    - certbot
+
+# docker compose up --scale nginx=3 表示启动3个nginx实例的容器
+
 # 可以直接引用已经定义好的yml文件，配置均相同，直接引入即可
 include:
   - ./docker-compose-base.yml
